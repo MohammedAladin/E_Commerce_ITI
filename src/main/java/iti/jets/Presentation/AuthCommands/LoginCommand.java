@@ -9,5 +9,6 @@ public class LoginCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
         forward("Login");
+
     }
 }
