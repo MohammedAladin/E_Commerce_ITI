@@ -1,4 +1,4 @@
-package iti.jets.Persistence;
+package iti.jets.persistence;
 
 import java.util.List;
 

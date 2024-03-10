@@ -1,7 +1,7 @@
-package iti.jets.Presentation.Filters;
+package iti.jets.presentation.Filters;
 
-import iti.jets.Presentation.AuthCommands.LoginCommand;
-import iti.jets.Presentation.FrontCommand;
+import iti.jets.presentation.AuthCommands.LoginCommand;
+import iti.jets.presentation.FrontCommand;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;

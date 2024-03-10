@@ -1,6 +1,6 @@
-package iti.jets.Presentation.AuthCommands;
+package iti.jets.presentation.AuthCommands;
 
-import iti.jets.Presentation.FrontCommand;
+import iti.jets.presentation.FrontCommand;
 import jakarta.servlet.ServletException;
 
 import java.io.IOException;

@@ -1,5 +1,5 @@
-package iti.jets.Presentation;
-import iti.jets.Presentation.Filters.FilterManager;
+package iti.jets.presentation;
+import iti.jets.presentation.Filters.FilterManager;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;

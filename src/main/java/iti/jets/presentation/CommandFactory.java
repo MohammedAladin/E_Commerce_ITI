@@ -1,6 +1,6 @@
-package iti.jets.Presentation;
+package iti.jets.presentation;
 
-import iti.jets.Presentation.AuthCommands.LoginCommand;
+import iti.jets.presentation.AuthCommands.LoginCommand;
 
 public class CommandFactory {
 

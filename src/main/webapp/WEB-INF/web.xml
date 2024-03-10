@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>FrontController</servlet-name>
-        <servlet-class>iti.jets.Presentation.FrontControllerServlet</servlet-class>
+        <servlet-class>iti.jets.presentation.FrontControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>

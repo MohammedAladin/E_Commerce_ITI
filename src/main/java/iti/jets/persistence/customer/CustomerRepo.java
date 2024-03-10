@@ -1,7 +1,7 @@
-package iti.jets.Persistence.Customer;
+package iti.jets.persistence.customer;
 
-import iti.jets.Business.Entities.Customer;
-import iti.jets.Persistence.Repository;
+import iti.jets.business.entities.Customer;
+import iti.jets.persistence.Repository;
 
 import java.util.List;
 
