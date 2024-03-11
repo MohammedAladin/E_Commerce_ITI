@@ -1,13 +1,13 @@
-package iti.jets.Presentation.PagesCommands;
+package iti.jets.presentation;
 
-import iti.jets.Presentation.FrontCommand;
 import jakarta.servlet.ServletException;
 
 import java.io.IOException;
 
-public class HomeCommand extends FrontCommand {
+public class UnknownCommand extends FrontCommand {
+
     @Override
     public void process() throws ServletException, IOException {
-
+            forward("unknown");
     }
 }
