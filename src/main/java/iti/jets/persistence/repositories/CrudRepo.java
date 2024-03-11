@@ -1,19 +1,17 @@
 package iti.jets.persistence.repositories;
 
-
-import iti.jets.persistence.connection.JPAManager;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;
 
 public abstract class CrudRepo<T,ID> {
     protected EntityManager entityManager;
 
-    protected CrudRepo(){
+    protected CrudRepo(EntityManager entityManager){
 //        this.entityManager = (EntityManager) request.getAttribute("entityManager");
-        this.entityManager = JPAManager.INSTANCE.getEntityManagerFactory().createEntityManager();
+//        this.entityManager = JPAManager.INSTANCE.getEntityManagerFactory().createEntityManager();
+        this.entityManager = entityManager;
     }
 
     public T save(T entity){
