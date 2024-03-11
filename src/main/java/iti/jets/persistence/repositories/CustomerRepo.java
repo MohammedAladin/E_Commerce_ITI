@@ -1,6 +1,6 @@
 package iti.jets.persistence.repositories;
 
-public class CustomerRepo extends CrudRepo<Customer, Integer>{
+public class CustomerRepo extends CrudRepo<Object/*Customer*/, Integer>{
     public CustomerRepo() {
         super();
     }
