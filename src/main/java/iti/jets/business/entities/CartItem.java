@@ -13,8 +13,6 @@ public class CartItem {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)
-    private BigDecimal totalPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cartId")
@@ -40,14 +38,6 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public Cart getCart() {
         return cart;
     }
@@ -64,4 +54,15 @@ public class CartItem {
         this.product = product;
     }
 
+    public void incrementCartItem(int number){
+        quantity+= number;
+    }
+
+    public void decrementCartItem(int number){
+        quantity-=number;
+    }
+
+    public double getTotalPrice(){
+        return product.getPrice().doubleValue() * quantity;
+    }
 }

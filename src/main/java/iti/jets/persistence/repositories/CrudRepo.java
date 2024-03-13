@@ -10,7 +10,6 @@ public abstract class CrudRepo<T,ID> {
 
     protected CrudRepo(EntityManager entityManager){
 //        this.entityManager = (EntityManager) request.getAttribute("entityManager");
-//        this.entityManager = JPAManager.INSTANCE.getEntityManagerFactory().createEntityManager();
         this.entityManager = entityManager;
     }
 

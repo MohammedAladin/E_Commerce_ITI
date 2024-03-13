@@ -2,7 +2,6 @@ package iti.jets.business.entities;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -13,9 +12,6 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cartId", nullable = false)
     private Integer id;
-
-    @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)
-    private BigDecimal totalPrice;
 
     @OneToMany(mappedBy = "cart")
     private Set<CartItem> cartItems = new LinkedHashSet<>();
@@ -32,14 +28,6 @@ public class Cart {
         this.id = id;
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public Set<CartItem> getCartitems() {
         return cartItems;
     }
@@ -48,12 +36,29 @@ public class Cart {
         this.cartItems = cartItems;
     }
 
-    public Customer getCustomers() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomers(Customer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
+    public void addCartItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+    }
+
+    public void clearCart() {
+        cartItems.clear();
+    }
+
+    public double getTotalPrice(){
+        double result = 0.0;
+
+        for (CartItem item: cartItems){
+            result += (item.getProduct().getPrice().doubleValue() * item.getQuantity());
+        }
+
+        return result;
+    }
 }
