@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class CreditCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "creditCardId", nullable = false)
+    @Column(name = "creditCardId")
     private Integer id;
 
     @Column(name = "cardNumber", length = 16, nullable = false)

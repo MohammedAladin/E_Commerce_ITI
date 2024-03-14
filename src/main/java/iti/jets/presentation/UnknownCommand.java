@@ -6,8 +6,16 @@ import java.io.IOException;
 
 public class UnknownCommand extends FrontCommand {
 
+
     @Override
-    public void process() throws ServletException, IOException {
-            forward("unknown");
+    public void doPostProcess() throws ServletException, IOException {
+        System.out.println("UnknownCommand.doPostProcess()");
+        forward("/Error404.html");
+    }
+
+    @Override
+    public void doGetProcess() throws ServletException, IOException {
+        System.out.println("UnknownCommand.doGetProcess()");
+        forward("/Error404.html");
     }
 }

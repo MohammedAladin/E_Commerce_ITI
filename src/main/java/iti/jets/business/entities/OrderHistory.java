@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class OrderHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orderId", nullable = false)
+    @Column(name = "orderId")
     private Integer id;
 
     @MapsId

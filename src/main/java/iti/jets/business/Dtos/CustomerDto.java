@@ -1,5 +1,6 @@
-package iti.jets.business.entities;
+package iti.jets.business.Dtos;
 
+import iti.jets.business.entities.*;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -7,47 +8,31 @@ import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "customer")
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customerId")
+public class CustomerDto {
+
     private Integer id;
-    @Column(name = "customerName", nullable = false)
     private String customerName;
 
-    @Column(name = "customerImage")
     private byte[] customerImage;
 
-    @Column(name = "phoneNumber", length = 15)
     private String phoneNumber;
 
-    @Column(name = "email", length = 50, nullable = false)
     private String email;
 
-    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "creditLimit", precision = 10, scale = 2, nullable = false)
     private BigDecimal creditLimit;
 
-    @Column(name = "DOB")
     private LocalDate dob;
 
-    @OneToOne(mappedBy = "customer")
     private Cart cart;
 
-    @OneToOne(mappedBy = "customer")
     private CreditCard billingCreditCard;
 
-    @OneToMany(mappedBy = "customer")
     private Set<CustomerOrder> customerOrders = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "customer")
     private Set<OrderHistory> orderhistories = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "customer")
     private Set<ProductReview> productreviews = new LinkedHashSet<>();
 
     public Integer getId() {
@@ -57,6 +42,7 @@ public class Customer {
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getCustomerName() {
         return customerName;
     }
@@ -129,11 +115,11 @@ public class Customer {
         this.billingCreditCard = billingCreditCard;
     }
 
-    public Set<CustomerOrder> getCustomerorders() {
+    public Set<CustomerOrder> getCustomerOrders() {
         return customerOrders;
     }
 
-    public void setCustomerorders(Set<CustomerOrder> customerOrders) {
+    public void setCustomerOrders(Set<CustomerOrder> customerOrders) {
         this.customerOrders = customerOrders;
     }
 
@@ -152,5 +138,4 @@ public class Customer {
     public void setProductreviews(Set<ProductReview> productreviews) {
         this.productreviews = productreviews;
     }
-
 }

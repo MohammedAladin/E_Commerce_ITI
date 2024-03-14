@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class BuyedItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "buyedItemId", nullable = false)
+    @Column(name = "buyedItemId")
     private Integer id;
 
     @Column(name = "quantity", nullable = false)

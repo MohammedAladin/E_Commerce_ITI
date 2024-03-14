@@ -10,7 +10,7 @@ import java.util.Set;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cartId", nullable = false)
+    @Column(name = "cartId")
     private Integer id;
 
     @OneToMany(mappedBy = "cart")

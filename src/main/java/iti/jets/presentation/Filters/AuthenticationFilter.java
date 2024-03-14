@@ -26,7 +26,7 @@ public class AuthenticationFilter implements Filter {
         if (session == null || session.getAttribute("username") == null) {
             FrontCommand command = new LoginCommand();
             command.init(httpServletRequest, httpServletResponse);
-            command.process();
+            //command.process();
         }
         else {
             chain.doFilter(request, response);
