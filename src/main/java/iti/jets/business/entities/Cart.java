@@ -11,7 +11,7 @@ import java.util.Set;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cartId", nullable = false)
+    @Column(name = "cartId")
     private Integer id;
 
     @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)

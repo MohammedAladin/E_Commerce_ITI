@@ -7,29 +7,29 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Fruitkha - Slider Version</title>
+	<title>Fruitkha</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="app/assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="app/assets/css/all.min.css">
+	<link rel="stylesheet" href="/e_commerce/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="app/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/e_commerce/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="app/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="/e_commerce/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="app/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="/e_commerce/assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="app/assets/css/animate.css">
+	<link rel="stylesheet" href="/e_commerce/assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="app/assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="/e_commerce//assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="app/assets/css/main.css">
+	<link rel="stylesheet" href="/e_commerce/assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="app/assets/css/responsive.css">
+	<link rel="stylesheet" href="/e_commerce/assets/css/responsive.css">
 
 </head>
 <body>
@@ -50,8 +50,8 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.jsp">
-								<img src="app/assets/img/logo.png" alt="">
+							<a href="index.html">
+								<img src="/e_commerce/assets/img/logo.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -61,8 +61,8 @@
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
-										<li><a href="index.jsp">Static Home</a></li>
-										<li><a href="index_2.html">Slider Home</a></li>
+										<li><a href="/e_commerce/index.html">Static Home</a></li>
+										<li><a href="/e_commerce/index_2.html">Slider Home</a></li>
 									</ul>
 								</li>
 								<li><a href="about.html">About</a></li>
@@ -129,59 +129,18 @@
 	</div>
 	<!-- end search area -->
 
-	<!-- home page slider -->
-	<div class="homepage-slider">
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-1">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh & Organic</p>
-								<h1>Delicious Seasonal Fruits</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-center">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh Everyday</p>
-								<h1>100% Organic Collection</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-right">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Mega Sale Going On!</p>
-								<h1>Get December Discount</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
+	<!-- hero area -->
+	<div class="hero-area hero-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<p class="subtitle">Fresh & Organic</p>
+							<h1>Delicious Seasonal Fruits</h1>
+							<div class="hero-btns">
+								<a href="shop.html" class="boxed-btn">Fruit Collection</a>
+								<a href="contact.html" class="bordered-btn">Contact Us</a>
 							</div>
 						</div>
 					</div>
@@ -189,7 +148,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- end home page slider -->
+	<!-- end hero area -->
 
 	<!-- features list section -->
 	<div class="list-section pt-80 pb-80">
@@ -251,7 +210,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="app/assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.html"><img src="/e_commerce/assets/img/products/product-img-1.jpg" alt=""></a>
 						</div>
 						<h3>Strawberry</h3>
 						<p class="product-price"><span>Per Kg</span> 85$ </p>
@@ -261,7 +220,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="app/assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="single-product.html"><img src="/e_commerce/assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>Berry</h3>
 						<p class="product-price"><span>Per Kg</span> 70$ </p>
@@ -271,7 +230,7 @@
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="app/assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="single-product.html"><img src="/e_commerce/assets/img/products/product-img-3.jpg" alt=""></a>
 						</div>
 						<h3>Lemon</h3>
 						<p class="product-price"><span>Per Kg</span> 35$ </p>
@@ -297,7 +256,7 @@
                                 </span>
                             </div>
                         </div>
-                    	<img src="app/assets/img/a.jpg" alt="">
+                    	<img src="/e_commerce/assets/img/a.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
@@ -322,7 +281,7 @@
 					<div class="testimonial-sliders">
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="app/assets/img/avaters/avatar1.png" alt="">
+								<img src="/e_commerce/assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Saira Hakim <span>Local shop owner</span></h3>
@@ -336,7 +295,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="app/assets/img/avaters/avatar2.png" alt="">
+								<img src="/e_commerce/assets/img/avaters/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>David Niph <span>Local shop owner</span></h3>
@@ -350,7 +309,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="app/assets/img/avaters/avatar3.png" alt="">
+								<img src="/e_commerce/assets/img/avaters/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Jacob Sikim <span>Local shop owner</span></h3>
@@ -475,19 +434,19 @@
 				<div class="col-lg-12">
 					<div class="logo-carousel-inner">
 						<div class="single-logo-item">
-							<img src="app/assets/img/company-logos/1.png" alt="">
+							<img src="/e_commerce/assets/img/company-logos/1.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="app/assets/img/company-logos/2.png" alt="">
+							<img src="/e_commerce/assets/img/company-logos/2.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="app/assets/img/company-logos/3.png" alt="">
+							<img src="/e_commerce/assets/img/company-logos/3.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="app/assets/img/company-logos/4.png" alt="">
+							<img src="/e_commerce/assets/img/company-logos/4.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="app/assets/img/company-logos/5.png" alt="">
+							<img src="/e_commerce/assets/img/company-logos/5.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -520,7 +479,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.jsp">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="services.html">Shop</a></li>
 							<li><a href="news.html">News</a></li>
@@ -532,7 +491,7 @@
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
 						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.jsp">
+						<form action="index.html">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -567,25 +526,25 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="app/assets/js/jquery-1.11.3.min.js"></script>
+	<script src="/e_commerce/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="app/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/e_commerce/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="app/assets/js/jquery.countdown.js"></script>
+	<script src="/e_commerce/assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="app/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="/e_commerce/assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="app/assets/js/waypoints.js"></script>
+	<script src="/e_commerce/assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="app/assets/js/owl.carousel.min.js"></script>
+	<script src="/e_commerce/assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="app/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/e_commerce/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="app/assets/js/jquery.meanmenu.min.js"></script>
+	<script src="/e_commerce/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="app/assets/js/sticker.js"></script>
+	<script src="/e_commerce/assets/js/sticker.js"></script>
 	<!-- main js -->
-	<script src="app/assets/js/main.js"></script>
+	<script src="/e_commerce/assets/js/main.js"></script>
 
 </body>
 </html>

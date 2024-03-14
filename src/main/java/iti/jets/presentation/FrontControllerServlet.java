@@ -15,11 +15,25 @@ public class FrontControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("Front-Controller...");
+        System.out.println("doGet Front-Controller...");
+        System.out.println("requesturi"+request.getRequestURI());
 
         FrontCommand command = getCommand(request);
         command.init(request, response);
-        command.process();
+        command.doGetProcess();
+
+    }
+
+    protected void doPost(HttpServletRequest request,
+                         HttpServletResponse response) throws ServletException, IOException {
+
+        System.out.println("doPost-> Front-Controller...");
+        System.out.println("requesturi: "+request.getRequestURI());
+
+
+        FrontCommand command = getCommand(request);
+        command.init(request, response);
+        command.doPostProcess();
 
     }
 
@@ -28,16 +42,12 @@ public class FrontControllerServlet extends HttpServlet {
         String commandName = request.getRequestURI();
 
         commandName = getURI(commandName);
+        System.out.println("FrontControllerServlet.getCommand() " + commandName);
 
         CommandFactory factory = new CommandFactory();
 
-        FrontCommand command = factory.getCommand(commandName);
-
-        if (command == null) {
-            command = new UnknownCommand();
-        }
-
-        return command;
+        System.out.println("after factory.getCommand()...");
+        return factory.getCommand(commandName);
 
     }
 
@@ -51,6 +61,12 @@ public class FrontControllerServlet extends HttpServlet {
         }
         else if(uri.contains("Home")){
             res = "Home";
+        }
+        else if(uri.contains("Auth")){
+            res = "Auth";
+        }
+        else if(uri.contains("Error404")){
+            res = "Error404";
         }
         return res;
     }
