@@ -1,5 +1,7 @@
 package iti.jets.business;
 
+import iti.jets.business.Dtos.CartItemDto;
+import iti.jets.business.Mappings.CartItemMapping;
 import iti.jets.business.entities.Cart;
 import iti.jets.business.entities.CartItem;
 import iti.jets.business.entities.Product;
@@ -8,6 +10,7 @@ import iti.jets.persistence.repositories.CartRepo;
 import jakarta.persistence.EntityManager;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CartService {
 
@@ -58,7 +61,21 @@ public class CartService {
         return cartRepo.getCartItemsByCartId(cartId);
     }
 
-    public List<CartItem> getCartItemsByCustomerId(int customerId){
-        return cartRepo.getCartItemsByCustomerId(customerId);
+    public List<CartItemDto> getCartItemsByCustomerId(int customerId){
+        return cartRepo.getCartItemsByCustomerId(customerId).stream()
+                .map(cartItem -> CartItemMapping.getInstance().mapEntityToDto(cartItem, CartItemDto.class))
+                .collect(Collectors.toList());
     }
+
+    public void updateCartItems(List<CartItemDto> cartItemDtos){
+        for(CartItemDto cartItemDto: cartItemDtos){
+            CartItem cartItem = cartRepo.findCartItemById(cartItemDto.getId());
+            if(!Objects.equals(cartItemDto.getQuantity(), cartItem.getQuantity())){
+                cartItem.setQuantity(cartItemDto.getQuantity());
+                cartRepo.updateCartItem(cartItem);
+            }
+
+        }
+    }
+
 }

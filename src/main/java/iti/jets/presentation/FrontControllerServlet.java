@@ -67,6 +67,8 @@ public class FrontControllerServlet extends HttpServlet {
         }
         else if(uri.contains("Error404")){
             res = "Error404";
+        } else if (uri.contains("Cart")) {
+            res = "Cart";
         }
         return res;
     }

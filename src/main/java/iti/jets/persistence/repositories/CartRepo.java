@@ -79,6 +79,10 @@ public class CartRepo extends CrudRepo<Cart, Integer>{
         }
     }
 
+    public CartItem findCartItemById(int cartItemId){
+        return entityManager.find(CartItem.class, cartItemId);
+    }
+
 
 //    public void incrementCartItem(CartItem cartItem, int quantity){
 //        CartItem cartItem1 = entityManager.find(CartItem.class,cartItem.getId());
