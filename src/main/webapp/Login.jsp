@@ -15,12 +15,14 @@
 
 			<span>or use your email for registration</span>
 			<input type="text" placeholder="Name" id="username" />
-			<input type="email" placeholder="Email" id="Email-in"/>
-			<input type="password" placeholder="Password" id="password-in"/>
+			<input type="email" placeholder="Email" id="Email-up"/>
+			<input type="password" placeholder="Password" id="password-up"/>
 			<input type="password" placeholder="Confirm Password" id="confirmPassword"/>
 			<input type="tel" placeholder="Phone Number" id="phoneNumber" />
 			<input type="date" placeholder="Date of Birth" id="dob" />
-			<input type="submit" value="Register">
+			<div id="error-message-up" style="color: red;"></div>
+			<br>
+			<button onclick="signUp()">Sign UP</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -32,10 +34,12 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="email" placeholder="Email" id="Email-in" />
+			<input type="password" placeholder="Password" id="password-in" />
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<div id="error-message-in" style="color: red;"></div>
+			<br>
+			<button onclick="signIn()">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -63,6 +67,6 @@
 	</p>
 </footer>
   <script src="app/assets/js/script.js"></script>
-  <script src="app/assets/js/SignInAjax.js"></script>
+  <script src="app/assets/js/Auth.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
 	<!-- fontawesome -->
 	<link rel="stylesheet" href="app/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="app/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="app/assets/bootstrap/cdiss/bootstrap.min.css">
 	<!-- owl carousel -->
 	<link rel="stylesheet" href="app/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
