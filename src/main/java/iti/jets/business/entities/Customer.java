@@ -1,11 +1,10 @@
 package iti.jets.business.entities;
-
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "customer")
