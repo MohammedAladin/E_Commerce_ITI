@@ -20,8 +20,7 @@ public class CustomerDto {
 
     private String dob;
 
-    private Cart cart;
-    private CreditCard billingCreditCard;
+    private CartDto cart;
     public Integer getId() {
         return id;
     }
@@ -72,20 +71,11 @@ public class CustomerDto {
         this.dob = dob;
     }
 
-    public Cart getCart() {
+    public CartDto getCart() {
         return cart;
     }
 
-    public void setCart(Cart cart) {
+    public void setCart(CartDto cart) {
         this.cart = cart;
     }
-
-    public CreditCard getBillingCreditCard() {
-        return billingCreditCard;
-    }
-
-    public void setBillingCreditCard(CreditCard billingCreditCard) {
-        this.billingCreditCard = billingCreditCard;
-    }
-
 }
