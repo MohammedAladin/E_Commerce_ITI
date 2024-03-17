@@ -23,8 +23,8 @@ public abstract class FrontCommand {
        
        // FilterManager.processAuthFilterChain(request, response);
     }
-    public abstract void doPostProcess() throws ServletException, IOException;
-    public abstract void doGetProcess() throws ServletException, IOException;
+    public  abstract void doPostProcess() throws ServletException, IOException;
+    public abstract void doGetProcess() throws ServletException, IOException ;
 
     protected void forward(String target) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher(target);

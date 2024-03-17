@@ -15,7 +15,6 @@ public class CartItem implements Serializable {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cartId")
     private Cart cart;
@@ -66,5 +65,15 @@ public class CartItem implements Serializable {
 
     public double getTotalPrice(){
         return product.getPrice().doubleValue() * quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", cart=" + cart +
+                ", product=" + product +
+                '}';
     }
 }

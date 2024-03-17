@@ -36,7 +36,7 @@ public class AuthServices {
         Customer customer = customersMapping.mapDtoToEntity(customerDto, Customer.class);
         customer.setDob(customerDto.getDob());
         System.out.println(customer.getCustomerName());
-        customer.setCreditLimit(BigDecimal.valueOf(1500));
+        customer.setCreditLimit(1500.0);
 
         if(CustomerValidations.hasNullNonNullableFields(customer)) {
             System.out.println("Null fields are not allowed");

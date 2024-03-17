@@ -14,6 +14,7 @@ public abstract class CrudRepo<T,ID> {
     }
 
     public T save(T entity){
+        System.out.println("saving..");
         entityManager.getTransaction().begin();
         entityManager.persist(entity);
         entityManager.getTransaction().commit();
@@ -32,6 +33,7 @@ public abstract class CrudRepo<T,ID> {
     }
 
     public T update(T entity){
+        System.out.println("updating..");
         entityManager.getTransaction().begin();
         T updatedEntity = entityManager.merge(entity);
         entityManager.getTransaction().commit();

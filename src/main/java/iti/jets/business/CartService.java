@@ -62,9 +62,20 @@ public class CartService {
     }
 
     public List<CartItemDto> getCartItemsByCustomerId(int customerId){
-        return cartRepo.getCartItemsByCustomerId(customerId).stream()
+
+
+
+        List<CartItemDto> items = cartRepo.getCartItemsByCustomerId(customerId).stream()
                 .map(cartItem -> CartItemMapping.getInstance().mapEntityToDto(cartItem, CartItemDto.class))
                 .collect(Collectors.toList());
+
+        System.out.println("items: " + items.size());
+        System.out.println("id: " + customerId);
+        for (CartItemDto item: items){
+            System.out.println("item: " + item.getQuantity());
+        }
+
+        return items;
     }
 
     public void updateCartItems(List<CartItemDto> cartItemDtos){

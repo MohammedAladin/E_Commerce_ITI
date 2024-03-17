@@ -1,6 +1,11 @@
 var cartItems;
 
 sendRequestToCart();
+// Save cart to localStorage
+function saveCart(cart) {
+    localStorage.setItem('userCart', JSON.stringify(cart));
+}
+
 function sendRequestToCart() {
     console.log("start send request");
     xmlHttp = new XMLHttpRequest();
@@ -13,6 +18,7 @@ function handleStateChange() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
         console.log("response: " + xmlHttp.responseText);
         cartItems = JSON.parse(xmlHttp.responseText);
+        saveCart(cartItems);
         cartItems.forEach(function(cartItem) {
             // You can access each cart item here
             console.log(cartItem);

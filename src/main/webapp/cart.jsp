@@ -17,7 +17,7 @@
 	<!-- fontawesome -->
 	<link rel="stylesheet" href="app/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="app/assets/bootstrap/cdiss/bootstrap.min.css">
+	<link rel="stylesheet" href="app/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
 	<link rel="stylesheet" href="app/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
@@ -193,7 +193,7 @@
 						</table>
 						<div class="cart-buttons">
 							<a id="update-cart-btn" class="boxed-btn">Update Cart</a>
-							<a href="checkout.html" class="boxed-btn black">Check Out</a>
+							<a href="checkout.jsp" class="boxed-btn black">Check Out</a>
 						</div>
 					</div>
 
