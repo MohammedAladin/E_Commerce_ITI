@@ -113,7 +113,7 @@ document.getElementById('update-cart-btn').addEventListener('click', function() 
 document.getElementById('check-out-cart-btn').addEventListener('click', function() {
     console.log('update cart button clicked');
     updateCartItemsRequest();
-    document.getElementById('progress-bar').style.display = 'block';
+    saveCart(cartItems);
     window.location.href = 'checkout.jsp';
 });
 
