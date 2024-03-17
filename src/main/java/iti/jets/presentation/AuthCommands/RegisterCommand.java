@@ -37,7 +37,7 @@ public class RegisterCommand extends FrontCommand {
             Customer customer = authServices.register(customerDto);
             if (customer != null) {
                 System.out.println(request.getRequestURI());
-                request.getSession().setAttribute("customer", customerDto);
+                request.getSession().setAttribute("customer", customer);
                 response.setStatus(200);
                 response.getWriter().write("Registered Successfully");
             }

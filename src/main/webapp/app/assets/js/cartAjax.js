@@ -46,9 +46,11 @@ function addRowToTable(cartItem) {
         cartItems.forEach(function(item, index) {
             if (item.id === cartItem.id) {
                 cartItems.splice(index, 1);
+                deleteCartItemFromServer(cartItem.id);
             }
         });
         newRow.remove();
+        calculateTotalPrice();
     });
 
     document.getElementById(`quantity-${cartItem.id}`).addEventListener('change', function() {
@@ -97,10 +99,26 @@ function calculateTotalPrice() {
 
 document.getElementById('update-cart-btn').addEventListener('click', function() {
     console.log('update cart button clicked');
+    updateCartItemsRequest();
+    document.getElementById('progress-bar').style.display = 'block';
+
+});
+
+document.getElementById('check-out-cart-btn').addEventListener('click', function() {
+    console.log('update cart button clicked');
+    updateCartItemsRequest();
+    document.getElementById('progress-bar').style.display = 'block';
+    window.location.href = 'checkout.jsp';
+});
+
+
+function updateCartItemsRequest(){
+    console.log('update cart button clicked');
     var xmlHttp2 = new XMLHttpRequest();
     xmlHttp2.onreadystatechange = function() {
         if (xmlHttp2.readyState == 4 && xmlHttp2.status == 200){
             console.log("response: " + xmlHttp2.responseText);
+            document.getElementById('progress-bar').style.display = 'none';
         }
     }
 
@@ -108,5 +126,18 @@ document.getElementById('update-cart-btn').addEventListener('click', function() 
     xmlHttp2.setRequestHeader("Content-Type", "application/json");
     console.log(" before sending cartItems= "+JSON.stringify(cartItems));
     xmlHttp2.send(JSON.stringify(cartItems));
+}
 
-});
+
+function deleteCartItemFromServer(cartItemId) {
+    console.log('deleteCartItemFromServer');
+    var xmlHttp3 = new XMLHttpRequest();
+    xmlHttp3.onreadystatechange = function() {
+        if (xmlHttp3.readyState == 4 && xmlHttp3.status == 200){
+            console.log("response: " + xmlHttp3.responseText);
+        }
+    }
+
+    xmlHttp3.open("GET", "app/Cart?type=3&cartItemId="+cartItemId, true);
+    xmlHttp3.send(null);
+}
