@@ -59,6 +59,7 @@ public class CartCommand extends FrontCommand {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
+
         if (customer != null) {
         System.out.println("customer :" + customer.getCustomerName());
             if (type.equals("1")) {

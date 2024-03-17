@@ -14,7 +14,7 @@ public class Cart implements Serializable {
     @Column(name = "cartId")
     private Integer id;
 
-    @OneToMany(mappedBy = "cart")
+    @OneToMany(mappedBy = "cart" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<CartItem> cartItems = new LinkedHashSet<>();
 
     @OneToOne
@@ -29,11 +29,11 @@ public class Cart implements Serializable {
         this.id = id;
     }
 
-    public Set<CartItem> getCartitems() {
+    public Set<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void setCartitems(Set<CartItem> cartItems) {
+    public void setCartItems(Set<CartItem> cartItems) {
         this.cartItems = cartItems;
     }
 
@@ -50,7 +50,10 @@ public class Cart implements Serializable {
     }
 
     public void clearCart() {
+        System.out.println("clearing cart.");
+        System.out.println("cartItems: " + cartItems.size());
         cartItems.clear();
+        System.out.println("cartItems: " + cartItems.size());
     }
 
     public double getTotalPrice(){
@@ -62,4 +65,15 @@ public class Cart implements Serializable {
 
         return result;
     }
+
+
+    public void addItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+        cartItem.setCart(this);
+    }
+    public void removeItem(CartItem cartItem) {
+        cartItems.remove(cartItem);
+        cartItem.setCart(null);
+    }
+
 }
