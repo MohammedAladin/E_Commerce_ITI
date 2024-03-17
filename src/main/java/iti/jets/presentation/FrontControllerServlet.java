@@ -70,6 +70,9 @@ public class FrontControllerServlet extends HttpServlet {
         } else if (uri.contains("Cart")) {
             res = "Cart";
         }
+        else if(uri.contains("CheckOut")){
+            res = "CheckOut";
+        }
         return res;
     }
 }

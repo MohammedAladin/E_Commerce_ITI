@@ -2,6 +2,7 @@ package iti.jets.business.entities;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class Customer {
     private String password;
 
     @Column(name = "creditLimit", precision = 10, scale = 2, nullable = false)
-    private BigDecimal creditLimit;
+    private Double creditLimit;
 
     @Column(name = "DOB")
     private LocalDate dob;
@@ -96,12 +97,15 @@ public class Customer {
         this.password = password;
     }
 
-    public BigDecimal getCreditLimit() {
+    public Double getCreditLimit() {
         return creditLimit;
     }
 
-    public void setCreditLimit(BigDecimal creditLimit) {
+    public void setCreditLimit(Double creditLimit) {
         this.creditLimit = creditLimit;
+    }
+    public void updateCreditLimit(Double amount){
+        this.creditLimit -= amount;
     }
 
     public LocalDate getDob() {
@@ -152,4 +156,13 @@ public class Customer {
         this.productreviews = productreviews;
     }
 
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", customerName='" + customerName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }

@@ -18,7 +18,7 @@ public class CustomerOrder {
     private Customer customer;
 
     @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)
-    private BigDecimal totalPrice;
+    private double totalPrice;
 
     @Column(name = "date", nullable = false)
     private LocalDate date;
@@ -42,11 +42,11 @@ public class CustomerOrder {
         this.customer = customer;
     }
 
-    public BigDecimal getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

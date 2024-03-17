@@ -19,17 +19,17 @@ function signUp(){
 
     console.log(signUpData);
 
-    // Add validation for Egypt phone number
-    const egyptPhoneNumberRegex = /^(01)(0|1|2|5)\d{8}$/;
-    if (!egyptPhoneNumberRegex.test(phoneNumber)) {
-        document.getElementById("error-message-up").innerText = "Invalid phone number";
-        return;
-    }
-
     // Add validations for the fields
     if (!username || !password || !email || !confirmPassword || !phoneNumber || !dob) {
         document.getElementById("error-message-up").innerText = "Please fill in all the fields";
         console.log("Please fill in all the fields.");
+        return;
+    }
+
+    // Add validation for Egypt phone number
+    const egyptPhoneNumberRegex = /^(01)(0|1|2|5)\d{8}$/;
+    if (!egyptPhoneNumberRegex.test(phoneNumber)) {
+        document.getElementById("error-message-up").innerText = "Invalid phone number";
         return;
     }
 

@@ -59,7 +59,7 @@ public class CartCommand extends FrontCommand {
         Customer customer = (Customer) session.getAttribute("customer");
 
 //        if(customer != null){
-            List<CartItemDto> cartItemDtos = cartService.getCartItemsByCustomerId(1);
+            List<CartItemDto> cartItemDtos = cartService.getCartItemsByCustomerId(78);
             String jsonDtos = convertToJson(cartItemDtos);
             System.out.println(jsonDtos);
             response.getWriter().print(jsonDtos);

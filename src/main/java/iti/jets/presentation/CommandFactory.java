@@ -3,6 +3,7 @@ package iti.jets.presentation;
 import iti.jets.presentation.AuthCommands.LoginCommand;
 import iti.jets.presentation.AuthCommands.RegisterCommand;
 import iti.jets.presentation.PagesCommands.CartCommand;
+import iti.jets.presentation.PagesCommands.CheckOutCommand;
 import iti.jets.presentation.PagesCommands.HomeCommand;
 
 import java.util.HashMap;
@@ -18,8 +19,6 @@ public class CommandFactory {
             System.out.println("CommandFactory.getCommand() " + commandName);
             return command != null ? command : new UnknownCommand();
         }
-
-
         private FrontCommand generateCommand(String commandName){
 
             return switch (commandName) {
@@ -27,6 +26,7 @@ public class CommandFactory {
                 case "Register" -> new RegisterCommand();
                 case "Home" -> new HomeCommand();
                 case "Cart" -> new CartCommand();
+                case "CheckOut" -> new CheckOutCommand();
                 default -> null;
             };
 

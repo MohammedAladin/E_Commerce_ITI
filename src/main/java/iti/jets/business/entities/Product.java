@@ -100,6 +100,10 @@ public class Product implements Serializable {
         this.category = category;
     }
 
+    public void decrementQuantity(int number){
+        stockCount-=number;
+    }
+
     public Set<BuyedItem> getBuyeditems() {
         return buyedItems;
     }
