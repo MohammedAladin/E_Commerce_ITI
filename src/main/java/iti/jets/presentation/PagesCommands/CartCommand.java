@@ -33,13 +33,14 @@ public class CartCommand extends FrontCommand {
 
 
         String type = request.getParameter("type");
-        System.out.println("in do post Cart and type : "+ type);
-        if (type.equals("2")){
+        System.out.println("in do post Cart and type : " + type);
+        if (type.equals("2")) {
             String cartItemDtosJson = getBody(request);
-            System.out.println("json from client :"+ cartItemDtosJson);
+            System.out.println("json from client :" + cartItemDtosJson);
 
             Gson gson = new Gson();
-            Type listType = new TypeToken<List<CartItemDto>>() {}.getType();
+            Type listType = new TypeToken<List<CartItemDto>>() {
+            }.getType();
             List<CartItemDto> cartItemDtos = gson.fromJson(cartItemDtosJson, listType);
 
             System.out.print("body : ");
@@ -58,12 +59,22 @@ public class CartCommand extends FrontCommand {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-//        if(customer != null){
-            List<CartItemDto> cartItemDtos = cartService.getCartItemsByCustomerId(78);
-            String jsonDtos = convertToJson(cartItemDtos);
-            System.out.println(jsonDtos);
-            response.getWriter().print(jsonDtos);
-//        }
+
+        if (customer != null) {
+        System.out.println("customer :" + customer.getCustomerName());
+            if (type.equals("1")) {
+                List<CartItemDto> cartItemDtos = cartService.getCartItemsByCustomerId(customer.getId());
+                String jsonDtos = convertToJson(cartItemDtos);
+                System.out.println(jsonDtos);
+                response.getWriter().print(jsonDtos);
+            } else if (type.equals("3")) {
+                int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
+                System.out.println("you need to delete cartItem with id :" + cartItemId);
+                cartService.deleteCartItem(cartItemId);
+            }
+        }else {
+            System.out.println("customer is null");
+        }
 
         System.out.println("finish do get in Cart");
     }
@@ -72,6 +83,7 @@ public class CartCommand extends FrontCommand {
         Gson gson = new Gson();
         return gson.fromJson(jsonString, classOfT);
     }
+
     public static <T> String convertToJson(T object) {
         Gson gson = new Gson();
         return gson.toJson(object);

@@ -193,7 +193,7 @@
 						</table>
 						<div class="cart-buttons">
 							<a id="update-cart-btn" class="boxed-btn">Update Cart</a>
-							<a href="checkout.jsp" class="boxed-btn black">Check Out</a>
+							<a id="check-out-cart-btn" class="boxed-btn black">Check Out</a>
 						</div>
 					</div>
 
