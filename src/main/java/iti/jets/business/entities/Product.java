@@ -9,6 +9,28 @@ import java.util.Set;
 @Entity
 @Table(name = "product")
 public class Product {
+
+    public Product(){
+
+    }
+
+    public Product(String productName, String productDescription, byte[] productImage, BigDecimal price, Integer stockCount, Category category, Set<BuyedItem> buyedItems, Set<CartItem> cartItems, Set<ProductReview> productreviews) {
+        this.productName = productName;
+        this.productDescription = productDescription;
+        this.productImage = productImage;
+        this.price = price;
+        this.stockCount = stockCount;
+        this.category = category;
+        this.buyedItems = buyedItems;
+        this.cartItems = cartItems;
+        this.productreviews = productreviews;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", name='" + productName + '\'' + ", description='" + productDescription  + ", price=" + price + ", quantity=" + stockCount + ", category=" + category.getCategoryName() + '}';
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productId")

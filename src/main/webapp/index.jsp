@@ -74,7 +74,7 @@
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="contact.html">Contact</a></li>
 										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
+										<li><a href="Shop">Shop</a></li>
 									</ul>
 								</li>
 								<li><a href="news.html">News</a>
@@ -139,7 +139,7 @@
 							<p class="subtitle">Fresh & Organic</p>
 							<h1>Delicious Seasonal Fruits</h1>
 							<div class="hero-btns">
-								<a href="shop.html" class="boxed-btn">Fruit Collection</a>
+								<a href="Shop" class="boxed-btn">Fruit Collection</a>
 								<a href="contact.html" class="bordered-btn">Contact Us</a>
 							</div>
 						</div>
@@ -491,10 +491,14 @@
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
 						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
-						</form>
+						<!-- <form action="index.html"> -->
+                            <form>
+							<input type="email"  id="emailll" name="emailll">
+						    <!-- <button type="submit"><i class="fas fa-paper-plane"></i></button> -->
+
+                           <button onclick="showAllProducts()"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+						<!-- </form> -->
 					</div>
 				</div>
 			</div>
@@ -507,15 +511,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>
+					<p>Copyrights &copy; 2024 - <a href="https://www.linkedin.com/in/yousif-hossam/">Yousif Hossam</a>,  All Rights Reserved.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="https://www.facebook.com/yousif.hossam10/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/Yousif_AlAhly" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/yousifhossam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/yousif-hossam/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
 						</ul>
 					</div>
@@ -524,6 +528,9 @@
 		</div>
 	</div>
 	<!-- end copyright -->
+
+	<!-- trial script by yousif -->
+    <script src="assets/js/home.js"></script>
 	
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
@@ -545,6 +552,7 @@
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+
 
 </body>
 </html>

@@ -46,9 +46,11 @@ public class RegisterCommand extends FrontCommand {
         customerDto.setPassword(password);
         customerDto.setEmail(email);
         customerDto.setPhoneNumber(phoneNumber);
+        customerDto.setDob(LocalDate.parse(dob));
 
         try {
             if (authServices.register(customerDto)) {
+                System.out.println("ramadan kareem");
                 System.out.println(request.getRequestURI());
                 response.setStatus(200);
                 response.getWriter().write("Registered Successfully");

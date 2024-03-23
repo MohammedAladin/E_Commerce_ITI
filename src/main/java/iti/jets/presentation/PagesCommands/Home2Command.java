@@ -6,7 +6,7 @@ import jakarta.servlet.ServletException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class HomeCommand extends FrontCommand {
+public class Home2Command extends FrontCommand {
 
 
     @Override
@@ -19,12 +19,13 @@ public class HomeCommand extends FrontCommand {
 
     @Override
     public void doGetProcess() throws ServletException, IOException {
-        System.out.println("HomeCommand.doGetProcess()");
-               forward("/index.jsp");
-//        String email = request.getParameter("email");
-//        response.setContentType("text/html");
-//        PrintWriter out = response.getWriter();
-//        System.out.println("before sending email");
-//        out.println(email);
+//        System.out.println("HomeCommand.doGetProcess()");
+//               forward("/index.jsp");
+        String email = request.getParameter("email");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        System.out.println("before sending email");
+        System.out.println(email);
+        out.println(email);
     }
 }

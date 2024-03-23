@@ -17,7 +17,7 @@ https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
             <property name="jakarta.persistence.jdbc.password" value="fruit"/>
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
         </properties>
     </persistence-unit>
 </persistence>

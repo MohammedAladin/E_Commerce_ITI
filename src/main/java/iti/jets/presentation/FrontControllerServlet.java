@@ -68,6 +68,24 @@ public class FrontControllerServlet extends HttpServlet {
         else if(uri.contains("Error404")){
             res = "Error404";
         }
+        else if(uri.contains("Hom2")){
+            res = "Hom2";
+        }
+        else if(uri.contains("Shop")){
+            res = "Shop";
+        }
+        else if(uri.contains("product")){
+            res="product";
+        }
+        else if(uri.contains("singleProduct")){
+            res="singleProduct";
+        }
+        else if(uri.contains("singlePage")){
+            res="singlePage";
+        }
+        else if(uri.contains("relatedProducts")){
+            res="relatedProducts";
+        }
         return res;
     }
 }
