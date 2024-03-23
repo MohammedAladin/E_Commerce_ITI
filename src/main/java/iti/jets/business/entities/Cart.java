@@ -2,18 +2,19 @@ package iti.jets.business.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "cart")
-public class Cart {
+public class Cart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cartId")
     private Integer id;
 
-    @OneToMany(mappedBy = "cart")
+    @OneToMany(mappedBy = "cart" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<CartItem> cartItems = new LinkedHashSet<>();
 
     @OneToOne
@@ -28,11 +29,11 @@ public class Cart {
         this.id = id;
     }
 
-    public Set<CartItem> getCartitems() {
+    public Set<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void setCartitems(Set<CartItem> cartItems) {
+    public void setCartItems(Set<CartItem> cartItems) {
         this.cartItems = cartItems;
     }
 
@@ -49,7 +50,10 @@ public class Cart {
     }
 
     public void clearCart() {
+        System.out.println("clearing cart.");
+        System.out.println("cartItems: " + cartItems.size());
         cartItems.clear();
+        System.out.println("cartItems: " + cartItems.size());
     }
 
     public double getTotalPrice(){
@@ -61,4 +65,15 @@ public class Cart {
 
         return result;
     }
+
+
+    public void addItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+        cartItem.setCart(this);
+    }
+    public void removeItem(CartItem cartItem) {
+        cartItems.remove(cartItem);
+        cartItem.setCart(null);
+    }
+
 }

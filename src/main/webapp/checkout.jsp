@@ -70,7 +70,7 @@
 									<ul class="sub-menu">
 										<li><a href="404.html">404 page</a></li>
 										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<li><a href="cart.jsp">Cart</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="contact.html">Contact</a></li>
 										<li><a href="news.html">News</a></li>
@@ -89,12 +89,12 @@
 										<li><a href="shop.html">Shop</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<li><a href="cart.jsp">Cart</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart.jsp"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -164,11 +164,11 @@
 						      <div class="card-body">
 						        <div class="billing-address-form">
 						        	<form action="index.jsp">
-						        		<p><input type="text" placeholder="Name"></p>
-						        		<p><input type="email" placeholder="Email"></p>
-						        		<p><input type="text" placeholder="Address"></p>
-						        		<p><input type="tel" placeholder="Phone"></p>
-						        		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
+						        		<p><input type="text" placeholder="Name" id="name"></p>
+						        		<p><input type="email" placeholder="Email" id="email"></p>
+						        		<p><input type="text" placeholder="Address" id="address"></p>
+						        		<p><input type="tel" placeholder="Phone" id="phone"></p>
+						        		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something" id="message"></textarea></p>
 						        	</form>
 						        </div>
 						      </div>
@@ -238,22 +238,10 @@
 									<td>$35.00</td>
 								</tr>
 							</tbody>
-							<tbody class="checkout-details">
-								<tr>
-									<td>Subtotal</td>
-									<td>$190</td>
-								</tr>
-								<tr>
-									<td>Shipping</td>
-									<td>$50</td>
-								</tr>
-								<tr>
-									<td>Total</td>
-									<td>$240</td>
-								</tr>
-							</tbody>
+							
 						</table>
-						<a href="#" class="boxed-btn">Place Order</a>
+						<a href="#" class="boxed-btn" onclick="placeOrder()">Place Order</a>
+						
 					</div>
 				</div>
 			</div>
@@ -379,6 +367,10 @@
 	<script src="app/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="app/assets/js/main.js"></script>
+
+	<script src="app/assets/js/checkOutAjax.js"></script>
+
+	
 
 </body>
 </html>

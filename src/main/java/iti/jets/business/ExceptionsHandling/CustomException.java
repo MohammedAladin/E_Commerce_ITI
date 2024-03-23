@@ -20,4 +20,7 @@ public class CustomException extends Exception{
     }
 
 
+    public int getStatusCode() {
+        return status;
+    }
 }

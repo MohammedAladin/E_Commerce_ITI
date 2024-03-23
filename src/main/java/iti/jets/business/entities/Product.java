@@ -2,13 +2,14 @@ package iti.jets.business.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product implements Serializable {
 
     public Product(){
 
@@ -119,6 +120,10 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public void decrementQuantity(int number){
+        stockCount-=number;
     }
 
     public Set<BuyedItem> getBuyeditems() {

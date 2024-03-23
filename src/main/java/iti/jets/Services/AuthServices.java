@@ -16,24 +16,27 @@ public class AuthServices {
         customerRepo = new CustomerRepo(EntityManagerThreads.getEntityManager());
     }
 
-    public boolean login(String username, String password){
-        Customer customer = customerRepo.findByUsername(username);
+    public Customer login(String username, String password){
+        Customer customer = customerRepo.findByEmail(username);
 
         if(customer != null){
             if(customer.getPassword().equals(password)){
-                return true;
+                System.out.println("Logged in successfully--- login service");
+                return customer;
             }
         }
-        return false;
+        System.out.println("Invalid email or password--- login service");
+        return null;
     }
 
-    public boolean register(CustomerDto customerDto) throws IllegalAccessException, CustomException {
+    public Customer register(CustomerDto customerDto) throws IllegalAccessException, CustomException {
 
         CustomersMapping customersMapping = new CustomersMapping();
         System.out.println(customerDto.getCustomerName());
         Customer customer = customersMapping.mapDtoToEntity(customerDto, Customer.class);
+        customer.setDob(customerDto.getDob());
         System.out.println(customer.getCustomerName());
-        customer.setCreditLimit(BigDecimal.valueOf(1500));
+        customer.setCreditLimit(1500.0);
 
         if(CustomerValidations.hasNullNonNullableFields(customer)) {
             System.out.println("Null fields are not allowed");
@@ -44,7 +47,7 @@ public class AuthServices {
             throw new CustomException("Email already exists", 400);
         }
         customerRepo.save(customer);
-        return true;
+        return customer;
     }
 
     public boolean logout(){
