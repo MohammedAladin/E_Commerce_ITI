@@ -1,21 +1,27 @@
 package iti.jets.Services;
 
-import iti.jets.business.Dtos.CartItemDto;
-import iti.jets.business.Dtos.ProductData;
-import iti.jets.business.Dtos.ProductDto;
+import iti.jets.business.Dtos.*;
 import iti.jets.business.Mappings.CartItemMapping;
+import iti.jets.business.Mappings.CustomersMapping;
 import iti.jets.business.Mappings.ProductDataMapping;
 import iti.jets.business.Mappings.ProductIMapping;
 import iti.jets.business.entities.Category;
+import iti.jets.business.entities.Customer;
+import iti.jets.business.entities.CustomerOrder;
 import iti.jets.business.entities.Product;
 import iti.jets.business.util.JsonMapper;
 import iti.jets.persistence.connection.JPAManager;
 import iti.jets.persistence.repositories.CategoryRepo;
+import iti.jets.persistence.repositories.CustomerOrderRepo;
+import iti.jets.persistence.repositories.CustomerRepo;
 import iti.jets.persistence.repositories.ProductRepoad;
+import jakarta.json.Json;
+import jakarta.json.JsonObjectBuilder;
 import jakarta.persistence.EntityManager;
 
 import javax.persistence.PersistenceException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import java.util.Base64;
@@ -102,5 +108,42 @@ public class AdminService {
                 .toList();
 
         return categoryNames;
+    }
+
+    public List<CustomerDto> getAllCustomers() {
+        CustomerRepo customerRepo = new CustomerRepo(em);
+
+        List<Customer> all = customerRepo.findAll(Customer.class);
+        List<CustomerDto> customerDtos = new ArrayList<>();
+
+        CustomersMapping customersMapping = new CustomersMapping();
+        all.forEach(customer -> {
+            CustomerDto customerDto = customersMapping.mapEntityToDto(customer, CustomerDto.class);
+            customerDtos.add(customerDto);
+        });
+
+        customerDtos.forEach(System.out::println);
+        return customerDtos;
+    }
+
+    public List<CustomerOrderDto> getAllOrders() {
+        CustomerOrderRepo customerOrderRepo = new CustomerOrderRepo(em);
+
+        List<CustomerOrder> allOrders = customerOrderRepo.findAll(CustomerOrder.class);
+        List<CustomerOrderDto> customerDtos = new ArrayList<>();
+
+        allOrders.forEach(order -> {
+            CustomerOrderDto orderDto = new CustomerOrderDto();
+            orderDto.setId(order.getId());
+            orderDto.setTotalPrice(order.getTotalPrice());
+            orderDto.setDate(order.getDate().toString());
+            orderDto.setOrderStatus(order.getOrderStatus());
+            orderDto.setCustomerId(order.getCustomer().getId());
+            orderDto.setCustomerName(order.getCustomer().getCustomerName());
+
+            customerDtos.add(orderDto);
+        });
+
+        return customerDtos;
     }
 }

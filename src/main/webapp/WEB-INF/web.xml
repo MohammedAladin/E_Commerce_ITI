@@ -36,6 +36,8 @@
         <web-resource-collection>
             <web-resource-name>SecureUpload</web-resource-name>
             <url-pattern>/admin.jsp</url-pattern>
+            <url-pattern>/admin_orders.jsp</url-pattern>
+            <url-pattern>/admin_users.jsp</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <description>

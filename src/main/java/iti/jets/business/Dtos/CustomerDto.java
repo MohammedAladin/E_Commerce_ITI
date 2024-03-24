@@ -98,4 +98,20 @@ public class CustomerDto {
     public void setCart(CartDto cart) {
         this.cart = cart;
     }
+
+    @Override
+    public String toString() {
+        return "CustomerDto{" +
+                "id=" + id +
+                ", customerName='" + customerName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", image='" + image + '\'' +
+                ", creditLimit=" + creditLimit +
+                ", dob='" + dob + '\'' +
+                ", country='" + country + '\'' +
+                ", cart=" + cart +
+                '}';
+    }
 }

@@ -4,9 +4,10 @@
 }
 
 body {
-    background: #222;
-    color: #fff;
+    background: #fdfdfd;
+    color: #222;
     font-family: monospace;
+    font-size: large;
 }
 
 .crud {
@@ -15,25 +16,31 @@ body {
 }
 
 .head {
+    background-color: #f28123;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
     text-align: center;
-    text-transform: uppercase;
-    margin: 10px 0;
+    font-size: 30px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 20px; /* Add this line */
+    border-bottom-right-radius: 20px;
 }
 
 input {
-    width: 100%;
+    width: 97.6%;
     height: 25px;
     outline: none;
     border: none;
-    background: #111;
+    background: #173b58;
     margin: 4px 0;
     border-radius: 15px;
     padding: 12px;
-    color: #fff;
+    color: #ffffff;
 }
 
 input:focus{
-    background: #000;
+    background: #173b58;
     transform: scale(1.03);
 }
 input:hover{
@@ -56,7 +63,7 @@ input:hover{
     content: 'Total: ';
 }
 
-button{
+button {
     width: 100%;
     height: 30px;
     border: none;
@@ -65,17 +72,26 @@ button{
     transition: 0.5s;
     text-transform: uppercase;
     font-family: monospace;
-
+    background-color: #f28123; /* Green color */
+    padding-top: 10px;
+    padding-bottom: 30px;
+    display: block; 
+    margin: auto; 
 }
 
 button:hover{
-    background: #b3afaf;
+    background: #e9bea2;
     letter-spacing: 1px;
 }
 
 button:active{
     background: #333232;
 }
+
+
+.delete {
+    background-color: #f51101; /* Red color */
+ }
 
 .btnSearch{
     display: flex;
@@ -106,7 +122,7 @@ th,td{
 select {
     width: 100%;
     height: 50px;
-    background: #111;
+    background: #173b58;
     color: #fff;
     border: none;
     border-radius: 15px;
@@ -116,7 +132,7 @@ select {
 }
 
 select:focus {
-    background: #000;
+    background: #173b58;
     transform: scale(1.03);
 }
 
@@ -124,3 +140,40 @@ select:hover {
     transform: scale(1.03);
     transition: 0.6s;
 }
+
+#menu {
+    position: fixed;
+    left: 0;
+    top: 15%;
+}
+
+#menu button {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #f28123;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#menu button:hover {
+    background-color: #f28123;
+}
+
+th {
+    background-color: #173b58;
+    color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Add this line */
+}
+
+
+
+
+

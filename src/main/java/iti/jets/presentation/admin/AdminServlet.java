@@ -2,6 +2,8 @@ package iti.jets.presentation.admin;
 
 import com.google.gson.Gson;
 import iti.jets.Services.AdminService;
+import iti.jets.business.Dtos.CustomerDto;
+import iti.jets.business.Dtos.CustomerOrderDto;
 import iti.jets.business.Dtos.ProductData;
 import iti.jets.business.Dtos.ProductDto;
 import jakarta.json.Json;
@@ -55,6 +57,27 @@ public class AdminServlet extends HttpServlet {
                 String jsonCategoryNames = gson.toJson(allCategoryNames);
                 resp.setContentType("application/json");
                 resp.getWriter().print(jsonCategoryNames);
+            }
+            case "6" -> {
+//            this means need users
+                System.out.println("users get");
+                List<CustomerDto> allCustomers = adminService.getAllCustomers();
+                Gson gson = new Gson();
+                String jsonCustomers = gson.toJson(allCustomers);
+                resp.setContentType("application/json");
+                resp.getWriter().print(jsonCustomers);
+
+            }
+            case "7" -> {
+//            this means need all orders
+                System.out.println("hereee");
+                List<CustomerOrderDto> allOrders = adminService.getAllOrders();
+                System.out.println("heree2");
+                Gson gson = new Gson();
+                String jsonOrders = gson.toJson(allOrders);
+                System.out.println(jsonOrders);
+                resp.setContentType("application/json");
+                resp.getWriter().print(jsonOrders);
             }
         }
     }

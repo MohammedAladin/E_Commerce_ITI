@@ -14,9 +14,20 @@
             </div>
         </div>
 
+        <div id="menu">
+            <button onclick="location.href='admin.jsp'" type="button">
+                Products
+            </button>
+            <button onclick="location.href='admin_orders.jsp'" type="button">
+                Orders
+            </button>
+            <button onclick="location.href='admin_users.jsp'" type="button">
+                Users
+            </button>
+        </div> 
+
         <div class="crud">
             <div class="head">
-                <h2>CRUD</h2>
                 <p>Product Managment System</p>
             </div>
             
