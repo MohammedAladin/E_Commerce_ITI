@@ -10,11 +10,13 @@
 	<title>Shop</title>
 
 	<!-- favicon -->
+
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
+
 	<link rel="stylesheet" href="assets/css/all.min.css">
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -52,6 +54,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.jsp">
+
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -63,6 +66,7 @@
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
 										<li><a href="index.jsp">Static Home</a></li>
+
 										<li><a href="index_2.html">Slider Home</a></li>
 									</ul>
 								</li>
@@ -95,6 +99,7 @@
 								</li>
 								<li>
 									<div class="header-icons">
+
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
@@ -146,6 +151,7 @@
 	<!-- end breadcrumb section -->
 
 
+
     <!-- products -->
     <div class="product-section mt-150 mb-150">
         <div class="container">
@@ -160,6 +166,7 @@
                             <li data-filter=".strawberry">Strawberry</li>
                             <li data-filter=".berry">Berry</li>
                             <li data-filter=".lemon">Lemon</li>
+
                             -->
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">All</li>
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">Summer Fruits</li>
@@ -213,6 +220,7 @@
 				<div class="col-lg-12">
 					<div class="logo-carousel-inner">
 						<div class="single-logo-item">
+
 							<img src="assets/img/company-logos/1.png" alt="">
 						</div>
 						<div class="single-logo-item">
@@ -241,6 +249,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
+
 						<p>Yousif Hossam Mohamed Salah
 						 Hassan Kamal ElDien Mahmoud
 						  Mohamed Alaa ElDien Ibrahim</p>
@@ -250,6 +259,7 @@
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
+
 							<li>34/8, East Banha, Qaluybia, Egypt.</li>
 							<li>support@fruitkha.com</li>
 							<li>+2 01001083571</li>
@@ -261,6 +271,7 @@
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="index.jsp">Home</a></li>
+
 							<li><a href="about.html">About</a></li>
 							<li><a href="services.html">Shop</a></li>
 							<li><a href="news.html">News</a></li>
@@ -273,6 +284,7 @@
 						<h2 class="widget-title">Subscribe</h2>
 						<p>Subscribe to our mailing list to get the latest updates.</p>
 						<form action="index.jsp">
+
 							<input name="emailll" id="emailll" type="email" placeholder="Email">
 <!--							<button type="submit"><i class="fas fa-paper-plane"></i></button>-->
 							<button onclick="showAllProducts()"><i class="fas fa-paper-plane"></i></button>
@@ -289,11 +301,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
+
 					<p>Copyrights &copy; 2024 - <a href="https://www.linkedin.com/in/yousif-hossam/">Yousif Hossam</a>,  All Rights Reserved.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
+
 							<li><a href="https://www.facebook.com/yousif.hossam10" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="https://twitter.com/Yousif_AlAhly" target="_blank"><i class="fab fa-twitter"></i></a></li>
 							<li><a href="https://www.instagram.com/yousifhossam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
@@ -308,17 +322,15 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
+
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
 	 <script src="assets/js/jquery.countdown.js"></script>
 
-
 	<!-- isotope -->
 	  <!-- <script src="assets/js/jquery.isotope-3.0.6.min.js"></script> -->
-
-
 
 	<!-- waypoints -->
 	<script src="assets/js/waypoints.js"></script>
@@ -336,7 +348,6 @@
     <script src="assets/js/home.js"></script>
 	<!-- products javascript -->
     <script src="assets/js/products.js"></script>
-
 
 </body>
 </html>

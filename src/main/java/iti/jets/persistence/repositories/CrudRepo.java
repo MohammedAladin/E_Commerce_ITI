@@ -1,5 +1,6 @@
 package iti.jets.persistence.repositories;
 
+import iti.jets.business.entities.Cart;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 

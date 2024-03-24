@@ -73,6 +73,11 @@ public class FrontControllerServlet extends HttpServlet {
         else if(uri.contains("CheckOut")){
             res = "CheckOut";
         }
+        else if(uri.contains("EditProfile")){
+            res = "EditProfile";
+        }
+        else if(uri.contains("ProfileImage")){
+            res = "ProfileImage";
         else if(uri.contains("Hom2")){
             res = "Hom2";
         }

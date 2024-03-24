@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+<!-- partial:index.partial.jsp -->
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form id="registrationForm">
@@ -26,7 +26,7 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form id="signInForm">
 			<h1>Sign in</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

@@ -16,7 +16,7 @@ public class EntityManagerThreads {
         return entityManager;
     }
 
-    public void closeEntityManager(){
+    public static void closeEntityManager(){
         EntityManager entityManager = threadLocal.get();
         if(entityManager != null){
             entityManager.close();

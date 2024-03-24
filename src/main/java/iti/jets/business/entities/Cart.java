@@ -1,5 +1,6 @@
 package iti.jets.business.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -19,6 +20,8 @@ public class Cart implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "customer_id")
+    @JsonBackReference
+
     private Customer customer;
 
     public Integer getId() {

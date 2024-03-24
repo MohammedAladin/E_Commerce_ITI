@@ -10,11 +10,13 @@
 	<title>Single Product</title>
 
 	<!-- favicon -->
+
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
+
 	<link rel="stylesheet" href="assets/css/all.min.css">
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -51,6 +53,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.jsp">
+
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -62,6 +65,7 @@
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
 										<li><a href="index.jsp">Static Home</a></li>
+
 										<li><a href="index_2.html">Slider Home</a></li>
 									</ul>
 								</li>
@@ -94,6 +98,7 @@
 								</li>
 								<li>
 									<div class="header-icons">
+
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
@@ -146,6 +151,7 @@
 
 	<!-- single product -->
 
+
 	        <input type="hidden" value="${requestScope.productId}" id="productId">
 
             <div class="single-product mt-150 mb-150" id="singleProductContainer">
@@ -158,6 +164,7 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
+
 						<img src="assets/img/products/product-img-5.jpg" alt="">
 					</div>
 				</div>
@@ -170,6 +177,7 @@
 							<form action="index.jsp">
 								<input type="number" placeholder="0">
 							</form>
+
 							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 							<p><strong>Categories: </strong>Fruits, Organic</p>
 						</div>
@@ -185,6 +193,7 @@
 			</div>
 		</div>
 	</div>
+
     -->
 	<!-- end single product -->
 
@@ -195,11 +204,13 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
 						<h3><span class="orange-text">Related</span> Products</h3>
+
 						<p>Products with category : ${requestScope.categoryName}</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
+
 				<div class="col-lg-4 col-md-6 text-center" id="firstRelatedProduct">
 
                 				</div>
@@ -221,6 +232,7 @@
 				<div class="col-lg-12">
 					<div class="logo-carousel-inner">
 						<div class="single-logo-item">
+
 							<img src="assets/img/company-logos/1.png" alt="">
 						</div>
 						<div class="single-logo-item">
@@ -243,6 +255,7 @@
 	<!-- end logo carousel -->
 
 	<!-- footer -->
+
     	<div class="footer-area">
     		<div class="container">
     			<div class="row">

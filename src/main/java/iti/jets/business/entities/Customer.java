@@ -1,4 +1,5 @@
 package iti.jets.business.entities;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -36,12 +37,16 @@ public class Customer {
     private LocalDate dob;
 
     @OneToOne(mappedBy = "customer")
+    @JsonManagedReference
+
     private Cart cart;
 
     @OneToOne(mappedBy = "customer")
     private CreditCard billingCreditCard;
 
     @OneToMany(mappedBy = "customer")
+    @JsonManagedReference
+
     private Set<CustomerOrder> customerOrders = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "customer")
