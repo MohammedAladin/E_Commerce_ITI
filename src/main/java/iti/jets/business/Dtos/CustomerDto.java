@@ -13,16 +13,14 @@ public class CustomerDto {
     private String customerName;
     private String phoneNumber;
     private String email;
-
     private String password;
-
     private String image;
-
     private BigDecimal creditLimit;
-
     private String dob;
-
     private String country;
+
+
+
 
     public String getImage() {
         return image;
@@ -32,7 +30,6 @@ public class CustomerDto {
         this.image = image;
     }
 
-    private CartDto cart;
     public Integer getId() {
         return id;
     }
@@ -91,11 +88,4 @@ public class CustomerDto {
         this.dob = dob;
     }
 
-    public CartDto getCart() {
-        return cart;
-    }
-
-    public void setCart(CartDto cart) {
-        this.cart = cart;
-    }
 }
