@@ -100,9 +100,13 @@ function updateSingleProduct(data) {
 
     // Create the add to cart button
     var addToCartLink = document.createElement('a');
-    addToCartLink.href = 'cart.html';
+    //addToCartLink.href = 'cart.html';
     addToCartLink.className = 'cart-btn';
     addToCartLink.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+    addToCartLink.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default behavior of the <a> element
+                    addToCart(document.getElementById('productId').value,quantityInput); // Call the addToCart function with the productId
+                });
     productForm.appendChild(addToCartLink);
 
     // Set the product categories
@@ -136,6 +140,36 @@ function updateSingleProduct(data) {
         listItem.appendChild(link);
         shareLinksList.appendChild(listItem);
     });
+}
+
+function addToCart(productId,quantityInput) {
+
+//        event.preventDefault();
+//        var productId = this.closest('.single-product-item').getAttribute('productId');
+        // Construct the URL with productId as a query parameter
+        var timestamp = new Date().getTime();
+        var url = 'app/addFrom-shop?productId=' + encodeURIComponent(productId) +"&quantity="+quantityInput.value+"&date="+timestamp;
+
+        var xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = xhr.responseText;
+                        if (data === 'Product added to cart successfully.') {
+                            alert('Product added to cart successfully.');
+                        } else {
+                            alert('Please sign in to add products to your cart.');
+                            window.location.href = "http://localhost:9090/e_commerce/Login.jsp";
+                        }
+                    } else {
+                        console.error('Failed to add product to cart.');
+                    }
+                }
+            };
+            xhr.send(); // No need to send data in the body for a simple POST request
+
 }
 
 function goToRelatedProduct() {

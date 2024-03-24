@@ -11,6 +11,9 @@ import java.io.IOException;
 public class SinglePageCommand extends FrontCommand {
 
     ProductService  productService = new ProductService();
+
+
+    //to send the excluded product to retrieve related products with same category
     public static int excludedProductId;
     public static int theCategoryId;
 
