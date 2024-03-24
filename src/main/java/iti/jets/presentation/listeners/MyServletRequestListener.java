@@ -2,13 +2,11 @@ package iti.jets.presentation.listeners;
 
 import jakarta.servlet.ServletRequestEvent;
 import jakarta.servlet.ServletRequestListener;
-import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 import java.security.Timestamp;
 
-@WebListener
 
 public class MyServletRequestListener implements ServletRequestListener {
 

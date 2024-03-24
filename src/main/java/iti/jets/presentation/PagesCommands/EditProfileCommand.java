@@ -39,6 +39,7 @@ public class EditProfileCommand extends FrontCommand {
             System.out.println("EditProfileCommand.doPostProcess() profileData: " + profileData);
 
             Customer customer = (Customer) request.getSession().getAttribute("customer");
+            System.out.println("EditProfileCommand.doPostProcess() id: " + customer.getCustomerName());
 
             updateProfileData(profileData, customer.getId());
 

@@ -1,10 +1,9 @@
 window.onload = function() {
 
-    //history.pushState({}, null, "home");
-
-    // Get the sign-in and logout buttons
-const signInButton = document.getElementById("signIn-button");
-const logoutButton = document.getElementById("logOut-button");
+    
+    
+    const signInButton = document.getElementById("signIn-button");
+    const logoutButton = document.getElementById("logOut-button");
 
     if (localStorage.getItem('user')) {
         console.log('Email exists');
