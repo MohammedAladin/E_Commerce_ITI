@@ -1,13 +1,20 @@
 window.onload = function() {
+
+    event.preventDefault();
+    var orderDetailsBody = document.querySelector('.order-details-body');
+
+    orderDetailsBody.innerHTML = '';
+
+    console.log('Load cart data');
+
+
     // Load cart data from local storage
     var cartData = JSON.parse(localStorage.getItem('userCart')) || [];
 
-    var orderDetailsBody = document.querySelector('.order-details-body');
 
     console.log('cartData: ' + cartData);
 
     // Clear the table body
-    orderDetailsBody.innerHTML = '';
 
     // Calculate totals
     var subtotal = 0;
@@ -56,6 +63,18 @@ function createTableRow(label, value) {
 }
 
 function placeOrder() {
+
+    event.preventDefault();
+
+
+    console.log('Place Order');
+    
+    if(localStorage.getItem('user') == null){
+        document.getElementById("error-message-in").innerText = "Please login to place an order.";
+        return
+      
+    }
+    console.log('You are logged in');
 
     // Get the form inputs
     var name = document.querySelector('.billing-address-form input[type="text"]').value;

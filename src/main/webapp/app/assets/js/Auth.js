@@ -62,6 +62,9 @@ function signUp(){
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log("success");
             console.log(xhr.responseText);
+            localStorage.setItem('user', email);
+            localStorage.setItem('password', password);
+
             window.location.href = "index.jsp";
         }
         if(xhr.status === 401){
@@ -74,6 +77,8 @@ function signUp(){
 }
 
 function signIn() {
+    event.preventDefault();
+
     var email = document.getElementById('Email-in').value;
     var password = document.getElementById('password-in').value;
 
@@ -103,6 +108,10 @@ function signIn() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log("success");
             console.log(xhr.responseText);
+            localStorage.setItem('user', email);
+            localStorage.setItem('password', password);
+            history.pushState({}, null, "home");
+
             window.location.href = "index.jsp";
         }
         else {

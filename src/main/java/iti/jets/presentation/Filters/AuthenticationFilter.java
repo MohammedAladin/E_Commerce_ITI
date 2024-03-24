@@ -23,10 +23,8 @@ public class AuthenticationFilter implements Filter {
 
         HttpSession session = httpServletRequest.getSession(false);
 
-        if (session == null || session.getAttribute("username") == null) {
-            FrontCommand command = new LoginCommand();
-            command.init(httpServletRequest, httpServletResponse);
-            //command.process();
+        if (session == null || session.getAttribute("customer") == null) {
+            httpServletRequest.getRequestDispatcher("/index.jsp").forward(httpServletRequest, httpServletResponse);
         }
         else {
             chain.doFilter(request, response);

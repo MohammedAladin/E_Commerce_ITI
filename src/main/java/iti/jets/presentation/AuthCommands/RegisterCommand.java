@@ -39,7 +39,10 @@ public class RegisterCommand extends FrontCommand {
                 System.out.println(request.getRequestURI());
                 request.getSession().setAttribute("customer", customer);
                 response.setStatus(200);
-                response.getWriter().write("Registered Successfully");
+
+                response.getWriter().write("Registered successfully");
+                System.out.println("Registered successfully");
+
             }
         } catch (
                 IllegalAccessException | CustomException e) {

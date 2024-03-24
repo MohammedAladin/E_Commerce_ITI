@@ -4,16 +4,22 @@ import iti.jets.business.Dtos.CustomerDto;
 import iti.jets.business.ExceptionsHandling.CustomException;
 import iti.jets.business.Mappings.CustomersMapping;
 import iti.jets.business.Validations.CustomerValidations;
+import iti.jets.business.entities.Cart;
 import iti.jets.business.entities.Customer;
+import iti.jets.persistence.repositories.CartRepo;
 import iti.jets.persistence.repositories.CustomerRepo;
+import jakarta.persistence.EntityManager;
 
 import java.math.BigDecimal;
 
 public class AuthServices {
 
     CustomerRepo customerRepo;
+    CartRepo cartRepo;
     public AuthServices() {
-        customerRepo = new CustomerRepo(EntityManagerThreads.getEntityManager());
+        EntityManager entityManager = EntityManagerThreads.getEntityManager();
+        customerRepo = new CustomerRepo(entityManager);
+        cartRepo = new CartRepo(entityManager);
     }
 
     public Customer login(String username, String password){
@@ -46,7 +52,25 @@ public class AuthServices {
             System.out.println("Email already exists");
             throw new CustomException("Email already exists", 400);
         }
-        customerRepo.save(customer);
+
+
+        try {
+            customerRepo.save(customer);
+
+            Cart cart = new Cart();
+            cart.setCustomer(customer);
+
+            cartRepo.save(cart);
+            //customer.setCart(cart);
+
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            throw new CustomException("Error in saving customer", 400);
+        }
+
+
+
         return customer;
     }
 

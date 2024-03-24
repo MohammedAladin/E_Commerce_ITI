@@ -16,9 +16,21 @@ public class CustomerDto {
 
     private String password;
 
+    private String image;
+
     private BigDecimal creditLimit;
 
     private String dob;
+
+    private String country;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     private CartDto cart;
     public Integer getId() {
@@ -57,6 +69,14 @@ public class CustomerDto {
 
     public BigDecimal getCreditLimit() {
         return creditLimit;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void setCreditLimit(BigDecimal creditLimit) {
