@@ -15,6 +15,11 @@
             margin-top: 20px;
             background: #f8f8f8
         }
+        .btn-primary {
+            border-color: #f28123;
+            background-color: #f28123;
+        }
+
     </style>
 
 </head>
@@ -42,10 +47,10 @@
                                         </div>
                                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                             <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                                                <p class="mb-0">@johnny.s</p>
-                                                <div class="text-muted"><small>Last seen 2 hours ago</small></div>
+                                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap" id="usernameHeader"></h4>
+                                                <p class="mb-0" id="emailHeader"></p>
                                                 <div class="mt-2">
+                                            
                                                     <button class="btn btn-primary" type="button" onclick="changePhoto()">
                                                         <i class="fa fa-fw fa-camera"></i>
                                                         <span>Change Photo</span>
@@ -58,6 +63,12 @@
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item"><a href class="active nav-link">Settings</a></li>
                                     </ul>
+                                    <br>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <a href="javascript:void(0)" onclick="history.back()" class="btn btn-primary">Back</a>
+                                        </div>
+                                    </div>
                                     <form id="infoForm">
                                         <div class="tab-content pt-3">
                                             <div class="tab-pane active">
@@ -67,11 +78,11 @@
                                                        
                                                         <div class="form-group">
                                                             <label>Username</label>
-                                                            <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                                                            <input class="form-control" type="text" name="username" placeholder="Username">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Email</label>
-                                                            <input class="form-control" type="text" placeholder="user@example.com">
+                                                            <input class="form-control" type="text" name="email">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Phone Number</label>
@@ -100,44 +111,28 @@
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label>Current Password</label>
-                                                            <input class="form-control" type="password">
+                                                            <input class="form-control" type="password" name="currentPassword">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>New Password</label>
-                                                            <input class="form-control" type="password">
+                                                            <input class="form-control" type="password" name="newPassword">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Confirm Password</label>
-                                                            <input class="form-control" type="password">
+                                                            <input class="form-control" type="password" name="confirmPassword">
                                                         </div>
                                                     </div>
                                                     <!-- Email Notifications Section -->
-                                                    <div class="col">
-                                                        <div class="mb-2"><b>Keeping in Touch</b></div>
-                                                        <label>Email Notifications</label>
-                                                        <div class="custom-controls-stacked px-2">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="notifications-blog" checked>
-                                                                <label class="custom-control-label" for="notifications-blog">Blog posts</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="notifications-news" checked>
-                                                                <label class="custom-control-label" for="notifications-news">Newsletter</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="notifications-offers" checked>
-                                                                <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                                 <!-- Save Changes Button -->
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">
-                                                        <button class="btn btn-primary" type="submit" onclick="editCustomer()">Save Changes</button>
+                                                        <button class="btn btn-primary" type="submit" onclick="editCustomer()" style="background-color: #f28123;">Save Changes</button>
                                                     </div>
                                                 </div>
+                                                
                                             </div>
+                                            
                                         </div>
                                     </form>
                                     

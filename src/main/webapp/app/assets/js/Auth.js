@@ -25,6 +25,16 @@ function signUp(){
         console.log("Please fill in all the fields.");
         return;
     }
+    // Add validation for password
+    if (password.length < 8) {
+        document.getElementById("error-message-up").innerText = "Password must be at least 8 characters long";
+        return;
+    }
+  
+    if (!/[a-z]/.test(password)) {
+        document.getElementById("error-message-up").innerText = "Password must contain at least one lowercase letter";
+        return;
+    }
 
     // Add validation for Egypt phone number
     const egyptPhoneNumberRegex = /^(01)(0|1|2|5)\d{8}$/;
@@ -62,8 +72,7 @@ function signUp(){
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log("success");
             console.log(xhr.responseText);
-            localStorage.setItem('user', email);
-            localStorage.setItem('password', password);
+            localStorage.setItem('user', xhr.responseText);
 
             window.location.href = "index.jsp";
         }
@@ -100,7 +109,6 @@ function signIn() {
 
     xhr.open('POST', 'app/Login', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(signInData));
 
 
     xhr.onreadystatechange = function() {
@@ -108,15 +116,17 @@ function signIn() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log("success");
             console.log(xhr.responseText);
-            localStorage.setItem('user', email);
-            localStorage.setItem('password', password);
-            history.pushState({}, null, "home");
-
+            localStorage.setItem('user', xhr.responseText);
             window.location.href = "index.jsp";
+            return;
         }
-        else {
-            document.getElementById("error-message-in").innerText = "Invalid email or password.";
+        else if(xhr.status === 401){
+            setTimeout(() => {
+                document.getElementById("error-message-in").innerText = "";
+            }, 5000);
             return;
         }
     }
+    xhr.send(JSON.stringify(signInData));
+
 }

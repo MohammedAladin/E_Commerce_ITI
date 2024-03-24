@@ -14,8 +14,14 @@ public class JsonMapper {
         return gson.fromJson(jsonString, classOfT);
     }
     public static <T> String convertToJson(T object) {
-        Gson gson = new Gson();
-        return gson.toJson(object);
+        try {
+            Gson gson = new Gson();
+            return gson.toJson(object);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     public static String getBody(HttpServletRequest request) throws IOException {
