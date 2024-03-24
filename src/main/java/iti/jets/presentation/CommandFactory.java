@@ -4,8 +4,10 @@ import iti.jets.presentation.AuthCommands.LoginCommand;
 import iti.jets.presentation.AuthCommands.RegisterCommand;
 import iti.jets.presentation.PagesCommands.CartCommand;
 import iti.jets.presentation.PagesCommands.CheckOutCommand;
+import iti.jets.presentation.PagesCommands.EditProfileCommand;
 import iti.jets.presentation.PagesCommands.HomeCommand;
-
+import iti.jets.presentation.actions.UploadImageCommand;
+import iti.jets.presentation.PagesCommands.*;
 import java.util.HashMap;
 import java.util.Map;   
 
@@ -27,6 +29,16 @@ public class CommandFactory {
                 case "Home" -> new HomeCommand();
                 case "Cart" -> new CartCommand();
                 case "CheckOut" -> new CheckOutCommand();
+                case "EditProfile" -> new EditProfileCommand();
+                case "ProfileImage" -> new UploadImageCommand();
+                case "Hom2" -> new Home2Command();
+                case "Shop" -> new ShopCommand();
+                case "product" -> new ProductCommand();
+                case "singleProduct" -> new SingleProductCommand();
+                case "singlePage" -> new SinglePageCommand();
+                case "relatedProducts" -> new RelatedProductsCommand();
+                case "addFrom-shop" -> new AddFromShopCommand();
+
                 default -> null;
             };
 

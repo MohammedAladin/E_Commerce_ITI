@@ -20,8 +20,7 @@ public abstract class FrontCommand {
         this.request = servletRequest;
         this.response = servletResponse;
 
-       
-       // FilterManager.processAuthFilterChain(request, response);
+        FilterManager.processLoggingFilterChain(request, response);
     }
     public  abstract void doPostProcess() throws ServletException, IOException;
     public abstract void doGetProcess() throws ServletException, IOException ;

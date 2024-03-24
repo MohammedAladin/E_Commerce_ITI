@@ -1,5 +1,6 @@
 package iti.jets.business.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -15,6 +16,8 @@ public class CustomerOrder {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customerId")
+    @JsonBackReference
+
     private Customer customer;
 
     @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)
