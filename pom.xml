@@ -84,11 +84,34 @@
           <artifactId>mysql-connector-j</artifactId>
           <version>8.0.33</version>
       </dependency>
+      <dependency>
+          <groupId>jakarta.json</groupId>
+          <artifactId>jakarta.json-api</artifactId>
+          <version>2.0.1</version>
+      </dependency>
+
+      <dependency>
+          <groupId>jakarta.json.bind</groupId>
+          <artifactId>jakarta.json.bind-api</artifactId>
+          <version>2.0.0</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.glassfish</groupId>
+          <artifactId>jakarta.json</artifactId>
+          <version>2.0.1</version>
+      </dependency>
 
       <dependency>
           <groupId>com.google.code.gson</groupId>
           <artifactId>gson</artifactId>
           <version>2.9.1</version>
+      </dependency>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.15.3</version>
       </dependency>
 
   </dependencies>
