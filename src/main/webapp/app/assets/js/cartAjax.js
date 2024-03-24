@@ -17,13 +17,19 @@ function sendRequestToCart() {
 function handleStateChange() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
         console.log("response: " + xmlHttp.responseText);
-        cartItems = JSON.parse(xmlHttp.responseText);
-        saveCart(cartItems);
-        cartItems.forEach(function(cartItem) {
-            // You can access each cart item here
-            console.log(cartItem);
-            addRowToTable(cartItem);
-        });
+        if(xmlHttp.responseText ==="null"){
+            window.location.href = "Login.jsp";
+        }else{
+            cartItems = JSON.parse(xmlHttp.responseText);
+            saveCart(cartItems);
+            cartItems.forEach(function(cartItem) {
+                // You can access each cart item here
+                console.log(cartItem);
+                addRowToTable(cartItem);
+            });
+        }
+
+        
     }
 }
 
@@ -33,14 +39,17 @@ function addRowToTable(cartItem) {
 
     var newRow = document.createElement('tr');
     newRow.className = 'table-body-row';
+    // let base64String = btoa(String.fromCharCode(...new Uint8Array(cartItem.productImage)));
 
+    // console.log("imagee" + base64String);
+    
     newRow.innerHTML = `
         <td class="product-remove"><i id="remove-${cartItem.id}" class="far fa-window-close"></i></a></td>
-        <td class="product-image"><img src="app/assets/img/products/product-img-2.jpg" alt=""></td>
-        <td class="product-name">${cartItem.product.productName}</td>
-        <td class="product-price">$${cartItem.product.price}</td>
-        <td class="product-quantity"><input type="number" id="quantity-${cartItem.id}" value=${cartItem.quantity} min="1" max="${cartItem.product.stockCount}"></td>
-        <td id="total-${cartItem.id}" class="product-total">$${cartItem.quantity * cartItem.product.price}</td>
+        <td><img src="data:image/jpeg;base64,${cartItem.productImage}" width="40" height="40" alt="${cartItem.productName}"></td>
+        <td class="product-name">${cartItem.productName}</td>
+        <td class="product-price">$${cartItem.price}</td>
+        <td class="product-quantity"><input type="number" id="quantity-${cartItem.id}" value=${cartItem.quantity} min="1" max="${cartItem.productStockCount}"></td>
+        <td id="total-${cartItem.id}" class="product-total">$${cartItem.quantity * cartItem.price}</td>
     `;
     // Append the new row to the table
     table.appendChild(newRow);
