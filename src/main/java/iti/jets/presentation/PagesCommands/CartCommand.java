@@ -4,8 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import iti.jets.business.CartService;
 import iti.jets.business.Dtos.CartItemDto;
+import iti.jets.business.Dtos.ProductData;
 import iti.jets.business.entities.Customer;
 import iti.jets.presentation.FrontCommand;
+import jakarta.json.Json;
+import jakarta.json.JsonObjectBuilder;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class CartCommand extends FrontCommand {
@@ -55,33 +60,34 @@ public class CartCommand extends FrontCommand {
         System.out.println("starting do get in Cart");
         String type = request.getParameter("type");
 
-        response.setContentType("application/json");
+
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
 
         if (customer != null) {
-        System.out.println("customer :" + customer.getCustomerName());
+            System.out.println("customer :" + customer.getCustomerName());
             if (type.equals("1")) {
+                response.setContentType("application/json");
                 List<CartItemDto> cartItemDtos = cartService.getCartItemsByCustomerId(customer.getId());
-                String jsonDtos = convertToJson(cartItemDtos);
-                System.out.println(jsonDtos);
-                response.getWriter().print(jsonDtos);
+                List<String> cartItemJson = new ArrayList<>();
+                cartItemDtos.forEach(cartItemDto -> {
+                    String jso = cartItemToJson(cartItemDto);
+                    cartItemJson.add(jso);
+                });
+                System.out.println(cartItemJson);
+                response.getWriter().print(cartItemJson);
             } else if (type.equals("3")) {
                 int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
                 System.out.println("you need to delete cartItem with id :" + cartItemId);
                 cartService.deleteCartItem(cartItemId);
             }
         }else {
+            response.getWriter().print("null");
             System.out.println("customer is null");
         }
 
         System.out.println("finish do get in Cart");
-    }
-
-    public static <T> T convertFromJson(String jsonString, Class<T> classOfT) {
-        Gson gson = new Gson();
-        return gson.fromJson(jsonString, classOfT);
     }
 
     public static <T> String convertToJson(T object) {
@@ -113,5 +119,23 @@ public class CartCommand extends FrontCommand {
         }
 
         return stringBuilder.toString();
+    }
+
+
+    private String cartItemToJson( CartItemDto cartItemDto) {
+        System.out.println("inside productToJson function");
+        JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
+        System.out.println("inside productToJson function2");
+        jsonObjectBuilder.add( "id", cartItemDto.getId() )
+                .add("quantity", cartItemDto.getQuantity())
+                .add("productId",cartItemDto.getProduct().getId())
+                .add("productName", cartItemDto.getProduct().getProductName())
+                .add("productDescription", cartItemDto.getProduct().getProductDescription())
+                .add("productStockCount", cartItemDto.getProduct().getStockCount())
+                .add("productImage", Base64.getEncoder().encodeToString(cartItemDto.getProduct().getProductImage()))
+                .add("price", cartItemDto.getProduct().getPrice())
+                .add("categoryName", cartItemDto.getProduct().getCategoryName());
+        System.out.println("inside productToJson function3");
+        return jsonObjectBuilder.build().toString();
     }
 }

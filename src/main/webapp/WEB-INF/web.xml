@@ -22,4 +22,33 @@
         <welcome-file>Login.jsp</welcome-file>
     </welcome-file-list>
 
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>iti.jets.presentation.admin.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>SecureUpload</web-resource-name>
+            <url-pattern>/admin.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>
+                let only hassan use this feature
+            </description>
+            <role-name>fruitManager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <role-name>fruitManager</role-name>
+    </security-role>
+    <login-config>
+        <auth-method>DIGEST</auth-method>
+    </login-config>
+
 </web-app>

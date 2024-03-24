@@ -11,12 +11,12 @@ public class CartItemDto implements Serializable {
     private Integer quantity;
     private CartDto cart;
 
-    private ProductDto product;
+    private ProductData product;
 
     public CartItemDto() {
     }
 
-    public CartItemDto(Integer id, Integer quantity, ProductDto product) {
+    public CartItemDto(Integer id, Integer quantity, ProductData product) {
         this.id = id;
         this.quantity = quantity;
         this.product = product;
@@ -46,11 +46,11 @@ public class CartItemDto implements Serializable {
         this.cart = cart;
     }
 
-    public ProductDto getProduct() {
+    public ProductData getProduct() {
         return product;
     }
 
-    public void setProduct(ProductDto product) {
+    public void setProduct(ProductData product) {
         this.product = product;
     }
 

@@ -4,6 +4,7 @@ import iti.jets.business.entities.Cart;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 
+import javax.persistence.PersistenceException;
 import java.util.List;
 
 public abstract class CrudRepo<T,ID> {
@@ -51,15 +52,20 @@ public abstract class CrudRepo<T,ID> {
         entityManager.getTransaction().commit();
     }
 
-    public T deleteById(Class<T> objClass, ID id){
-        entityManager.getTransaction().begin();
+    public T deleteById(Class<T> objClass, ID id) throws RuntimeException{
+        try {
 
-        T entity = entityManager.find(objClass,id);
-        if (entity != null) {
-            entityManager.remove(entity);
+            entityManager.getTransaction().begin();
+
+            T entity = entityManager.find(objClass, id);
+            if (entity != null) {
+                entityManager.remove(entity);
+            }
+
+            entityManager.getTransaction().commit();
+            return entity;
+        }catch (Exception e){
+            throw new RuntimeException("cannot delete this item");
         }
-
-        entityManager.getTransaction().commit();
-        return entity;
     }
 }

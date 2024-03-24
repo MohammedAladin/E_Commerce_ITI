@@ -1,21 +1,18 @@
 package iti.jets.business.Dtos;
 
-import iti.jets.business.entities.Category;
-
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
-public class ProductDto implements Serializable {
+public class ProductData {
     private Integer id;
     private String productName;
     private String productDescription;
     private Integer stockCount;
-//    private byte[] productImage;
-    private BigDecimal price;
-    private CategoryDto category;
+    private byte[] productImage;
+    private double price;
+    private String categoryName;
 
-    public ProductDto() {
+    public ProductData() {
     }
 
     public Integer getId() {
@@ -42,31 +39,6 @@ public class ProductDto implements Serializable {
         this.productDescription = productDescription;
     }
 
-//    public byte[] getProductImage() {
-//        return productImage;
-//    }
-//
-//    public void setProductImage(byte[] productImage) {
-//        this.productImage = productImage;
-//    }
-
-
-    public CategoryDto getCategory() {
-        return category;
-    }
-
-    public void setCategory(CategoryDto category) {
-        this.category = category;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
     public Integer getStockCount() {
         return stockCount;
     }
@@ -75,15 +47,40 @@ public class ProductDto implements Serializable {
         this.stockCount = stockCount;
     }
 
+    public byte[] getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(byte[] productImage) {
+        this.productImage = productImage;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     @Override
     public String toString() {
-        return "ProductDto{" +
+        return "ProductData{" +
                 "id=" + id +
                 ", productName='" + productName + '\'' +
                 ", productDescription='" + productDescription + '\'' +
                 ", stockCount=" + stockCount +
-//                ", productImage=" + Arrays.toString(productImage) +
+                ", productImage=" + productImage +
                 ", price=" + price +
+                ", categoryName='" + categoryName + '\'' +
                 '}';
     }
 }
