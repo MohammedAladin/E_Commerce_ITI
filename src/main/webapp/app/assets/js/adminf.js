@@ -98,7 +98,7 @@ function addProduct(product) {
             <td>${product.productDescription}</td>
             <td>${product.categoryName}</td>
             <td><button onclick="updateProduct(${product.productId})" id="update${product.productId}">update</button></td>
-            <td><button onclick="deleteProduct(${product.productId})" id="delete${product.productId}">delete</button></td>
+            <td><button class="delete" onclick="deleteProduct(${product.productId})" id="delete${product.productId}">delete</button></td>
         `
     tableBody.appendChild(newRow);
 }
