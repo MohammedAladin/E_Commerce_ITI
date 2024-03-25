@@ -59,14 +59,10 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
-									<ul class="sub-menu">
-										<li><a href="index.jsp">Static Home</a></li>
-										<li><a href="index_2.jsp">Slider Home</a></li>
-									</ul>
+								<li><a href="index.jsp">Home</a>
 								</li>
-								<li><a href="about.jsp">About</a></li>
-								<li><a href="#">Pages</a>
+								<li  class="current-list-item"><a href="about.jsp">About</a></li>
+								<!-- <li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.jsp">404 page</a></li>
 										<li><a href="about.jsp">About</a></li>
@@ -76,7 +72,7 @@
 										<li><a href="news.jsp">News</a></li>
 										<li><a href="shop.jsp">Shop</a></li>
 									</ul>
-								</li>
+								</li> -->
 								<li><a href="news.jsp">News</a>
 									<ul class="sub-menu">
 										<li><a href="news.jsp">News</a></li>
@@ -84,18 +80,17 @@
 									</ul>
 								</li>
 								<li><a href="contact.jsp">Contact</a></li>
-								<li><a href="shop.jsp">Shop</a>
-									<ul class="sub-menu">
+								<li><a href="/e_commerce/app/Shop">Shop</a>
+									<!-- <ul class="sub-menu">
 										<li><a href="shop.jsp">Shop</a></li>
 										<li><a href="checkout.jsp">Check Out</a></li>
 										<li><a href="single-product.jsp">Single Product</a></li>
 										<li><a href="cart.jsp">Cart</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.jsp"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
 							</ul>
@@ -109,6 +104,7 @@
 		</div>
 	</div>
 	<!-- end header -->
+
 
 	<!-- search area -->
 	<div class="search-area">
@@ -221,7 +217,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Our <span class="orange-text">Team</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Our candidate team comprises skilled individuals committed to driving innovation and achieving excellence together.</p>
 					</div>
 				</div>
 			</div>
@@ -229,33 +225,30 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item">
 						<div class="team-bg team-bg-1"></div>
-						<h4>Jimmy Doe <span>Farmer</span></h4>
+						<h4>Hassan Kamal <span>Java Software Engineer</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/hassankamalv/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/hassankamal87" target="_blank"><i class="fab fa-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item">
 						<div class="team-bg team-bg-2"></div>
-						<h4>Marry Doe <span>Farmer</span></h4>
+						<h4>Mohamed Alaa <span>Java Software Engineer</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/mohammedaladin?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADFxxEcBGWxFR4YlcbZUUx7FYMTt39Ml380&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BUikyJw77Rkqx87Hei6mZrQ%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/MohammedAladin" target="_blank"><i class="fab fa-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
 					<div class="single-team-item">
 						<div class="team-bg team-bg-3"></div>
-						<h4>Simon Joe <span>Farmer</span></h4>
+						<h4>Yousif Hossam <span>Java Software Engineer</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/yousif-hossam/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/MohammedAladin/E_Commerce_ITI/commits?author=Yousif1010" target="_blank"><i class="fab fa-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -275,9 +268,9 @@
 								<img src="app/assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<h3>Hassan Kamal <span>Software Engineer</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Passionate about Java software engineering, our candidate brings a fervent dedication to mastering the intricacies of the language, coupled with a relentless drive to innovate and solve complex problems. Their enthusiasm for Java extends beyond mere coding; it's a commitment to crafting elegant solutions and pushing the boundaries of what's possible in software development "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -289,9 +282,9 @@
 								<img src="app/assets/img/avaters/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>David Niph <span>Local shop owner</span></h3>
+								<h3>Mohamed Alaa <span>Software Engineer</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" With a deep-seated passion for Java, our candidate consistently seeks out opportunities to deepen their expertise, whether through personal projects, online courses, or active participation in developer communities. Their relentless pursuit of knowledge fuels their desire to stay ahead of industry trends and adopt best practices, ensuring that their skills remain cutting-edge and adaptable to evolving technology landscapes. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -303,9 +296,9 @@
 								<img src="app/assets/img/avaters/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<h3>Yousif Hossam <span>Software Engineer</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Beyond technical proficiency, our Java software engineer is fueled by an unwavering passion for building impactful software solutions that resonate with end-users. They understand that behind every line of code lies the potential to create meaningful experiences, and they approach their work with a sense of purpose and dedication, striving to leave a lasting positive impact on the projects they undertake "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -354,16 +347,16 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Youssef, Mohamed, and Hassan form a dynamic team driving an e-commerce project forward. With diverse expertise in development, design, and marketing, we're poised to revolutionize online shopping.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+							<li>Giza, Smart Village, ITI, JETS, EWD TRACK.</li>
 							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							<li>01010467364</li>
 						</ul>
 					</div>
 				</div>
@@ -399,16 +392,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>
+					<p>Copyrights &copy; 2023 - <a href="https://github.com/MohammedAladin/E_Commerce_ITI">Github</a>,  All Rights Reserved.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+							<li><a href="https://www.facebook.com/yousif.hossam10" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/Yousif_AlAhly" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/yousifhossam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/hassankamalv/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							
 						</ul>
 					</div>
 				</div>

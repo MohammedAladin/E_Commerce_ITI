@@ -59,14 +59,10 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
-									<ul class="sub-menu">
-										<li><a href="index.jsp">Static Home</a></li>
-										<li><a href="index_2.jsp">Slider Home</a></li>
-									</ul>
+								<li><a href="index.jsp">Home</a>
 								</li>
 								<li><a href="about.jsp">About</a></li>
-								<li><a href="#">Pages</a>
+								<!-- <li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.jsp">404 page</a></li>
 										<li><a href="about.jsp">About</a></li>
@@ -76,26 +72,25 @@
 										<li><a href="news.jsp">News</a></li>
 										<li><a href="shop.jsp">Shop</a></li>
 									</ul>
-								</li>
-								<li><a href="news.jsp">News</a>
+								</li> -->
+								<li class="current-list-item"><a href="news.jsp">News</a>
 									<ul class="sub-menu">
 										<li><a href="news.jsp">News</a></li>
-										<li><a href="single-news.jsp">Single News</a></li>
+										<li><a href="#">Single News</a></li>
 									</ul>
 								</li>
 								<li><a href="contact.jsp">Contact</a></li>
-								<li><a href="shop.jsp">Shop</a>
-									<ul class="sub-menu">
+								<li><a href="/e_commerce/app/Shop">Shop</a>
+									<!-- <ul class="sub-menu">
 										<li><a href="shop.jsp">Shop</a></li>
 										<li><a href="checkout.jsp">Check Out</a></li>
 										<li><a href="single-product.jsp">Single Product</a></li>
 										<li><a href="cart.jsp">Cart</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.jsp"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
 							</ul>
@@ -285,16 +280,16 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Youssef, Mohamed, and Hassan form a dynamic team driving an e-commerce project forward. With diverse expertise in development, design, and marketing, we're poised to revolutionize online shopping.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+							<li>Giza, Smart Village, ITI, JETS, EWD TRACK.</li>
 							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							<li>01010467364</li>
 						</ul>
 					</div>
 				</div>
@@ -330,16 +325,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>
+					<p>Copyrights &copy; 2023 - <a href="https://github.com/MohammedAladin/E_Commerce_ITI">Github</a>,  All Rights Reserved.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+							<li><a href="https://www.facebook.com/yousif.hossam10" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/Yousif_AlAhly" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/yousifhossam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/hassankamalv/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							
 						</ul>
 					</div>
 				</div>

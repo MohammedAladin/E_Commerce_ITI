@@ -26,10 +26,10 @@ window.onload = function() {
         var row = document.createElement('tr');
 
         var productName = document.createElement('td');
-        productName.textContent = item.product.productName;
+        productName.textContent = item.productName;
 
         var totalPrice = document.createElement('td');
-        totalPrice.textContent = '$' + item.product.price * item.quantity;
+        totalPrice.textContent = '$' + item.price * item.quantity;
 
         row.appendChild(productName);
         row.appendChild(totalPrice);
@@ -38,7 +38,7 @@ window.onload = function() {
         orderDetailsBody.appendChild(row);
 
         // Update the subtotal
-        subtotal += item.product.price * item.quantity;
+        subtotal += item.price * item.quantity;
     });
 
     // Add subtotal, shipping, and total rows
