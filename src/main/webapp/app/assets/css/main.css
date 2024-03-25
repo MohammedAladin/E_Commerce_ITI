@@ -2755,3 +2755,17 @@ table.order-details tbody td {
   vertical-align: middle;
   width: 100%;
 }
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f28123;
+  color: #fff;
+  padding: 20px 30px; /* Increased padding for bigger size */
+  border-radius: 5px;
+  display: none;
+  z-index: 9999; /* Ensure it appears on top of other elements */
+  font-size: 18px; /* Increased font size */
+  font-weight: bold; /* Added font weight */
+}

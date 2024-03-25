@@ -95,4 +95,9 @@ public class CartService {
         }
     }
 
+    public void clearCart(int id){
+        Cart cart = cartRepo.getCartByCustomerId(id);
+        cartRepo.clearCart(cart);
+    }
+
 }

@@ -138,7 +138,11 @@
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
-
+	
+	<!-- start notification div -->
+	<div class="notification" id="notification"></div>
+	<!-- end notification div -->
+	
 	<!-- check out section -->
 	<div class="checkout-section mt-150 mb-150">
 		<div class="container">

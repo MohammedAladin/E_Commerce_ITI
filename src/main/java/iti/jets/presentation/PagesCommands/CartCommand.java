@@ -81,6 +81,9 @@ public class CartCommand extends FrontCommand {
                 int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
                 System.out.println("you need to delete cartItem with id :" + cartItemId);
                 cartService.deleteCartItem(cartItemId);
+            }else if(type.equals("4")){
+                System.out.println("i'm in cart Command to clear cart");
+                cartService.clearCart(customer.getId());
             }
         }else {
             response.getWriter().print("null");
