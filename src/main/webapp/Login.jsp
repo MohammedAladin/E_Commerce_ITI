@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <title>CodePen - Weekly Coding Challenge #1 -  Double slider Sign in/up Form - Desktop Only</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="app/assets/css/style.css">
+  <link rel="stylesheet" href="app/assets/css/progressbar.css">
 
 </head>
 <body>
+
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
 <!-- partial:index.partial.jsp -->
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
