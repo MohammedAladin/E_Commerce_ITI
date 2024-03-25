@@ -1,4 +1,6 @@
+var loader = document.querySelector('.loader');
 window.onload = function() {
+    
     console.log("begin of js");
     var countOfPages = document.getElementById('countOfPages');
     var currentPage = document.getElementById('currentPage');
@@ -53,6 +55,7 @@ function displayProducts(pageNumber) {
             // Call a function to update the product list
             updateProductList(data);
         }
+        hideLoader();
     };
     // Send the request with the current timestamp as data
     console.log("before sending parameters");
@@ -251,6 +254,15 @@ function goToSingleProductPage(productId) {
             window.location.href = url;
 }
 
+// Function to show the loader
+function showLoader() {
+    loader.style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    loader.style.display = 'none';
+}
 
 
 
