@@ -8,6 +8,7 @@ import iti.jets.persistence.repositories.ProductRepo;
 import iti.jets.presentation.PagesCommands.SinglePageCommand;
 import jakarta.persistence.EntityManager;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +70,19 @@ public class ProductService {
         ProductMapping productMapping = new ProductMapping();
         ProductDtoYousif productDtoYousif = productMapping.mapEntityToDto(product, ProductDtoYousif.class);
         return productDtoYousif;
+    }
+
+    public List<ProductDtoYousif> retrieveFilteredProducts(String categories, BigDecimal minPrice, BigDecimal maxPrice, int pageNumber, int pageSize){
+
+        List<Product>filteredProducts=productRepo.filterProducts(categories, minPrice, maxPrice, pageNumber, pageSize);
+        ProductMapping productMapping = new ProductMapping();
+        List<ProductDtoYousif> productDtoYousifs = new ArrayList<>();
+        for(Product filteredProduct:filteredProducts){
+            ProductDtoYousif productDtoYousif = productMapping.mapEntityToDto(filteredProduct, ProductDtoYousif.class);
+            productDtoYousifs.add(productDtoYousif);
+        }
+        System.out.println(productDtoYousifs.size());
+        return productDtoYousifs;
     }
 
 }

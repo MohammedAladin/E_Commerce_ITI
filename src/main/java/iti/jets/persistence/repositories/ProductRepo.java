@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ProductRepo extends CrudRepo<Product,Integer>{
@@ -55,6 +56,52 @@ public class ProductRepo extends CrudRepo<Product,Integer>{
                 .getResultList();
         return products;
     }
+
+    public List<Product> filterProducts(String categories, BigDecimal minPrice, BigDecimal maxPrice, int pageNumber, int pageSize) {
+        StringBuilder jpqlBuilder = new StringBuilder("SELECT p FROM Product p WHERE 1 = 1");
+
+        // Add filters based on provided criteria
+        if (categories != null && !categories.isEmpty()) {
+            String[] categoryArray = categories.split(",");
+            jpqlBuilder.append(" AND p.category.categoryName IN (");
+            for (int i = 0; i < categoryArray.length; i++) {
+                if (i > 0) {
+                    jpqlBuilder.append(",");
+                }
+                jpqlBuilder.append(":category").append(i);
+            }
+            jpqlBuilder.append(")");
+        }
+        if (minPrice != null) {
+            jpqlBuilder.append(" AND p.price >= :minPrice");
+        }
+        if (maxPrice != null && maxPrice.compareTo(BigDecimal.valueOf(-1)) != 0) {
+            jpqlBuilder.append(" AND p.price <= :maxPrice");
+        }
+
+        // Create query and set parameters
+        Query query = entityManager.createQuery(jpqlBuilder.toString(), Product.class);
+        if (categories != null && !categories.isEmpty()) {
+            String[] categoryArray = categories.split(",");
+            for (int i = 0; i < categoryArray.length; i++) {
+                query.setParameter("category" + i, categoryArray[i]);
+            }
+        }
+        if (minPrice != null) {
+            query.setParameter("minPrice", minPrice);
+        }
+        if (maxPrice != null && maxPrice.compareTo(BigDecimal.valueOf(-1)) != 0) {
+            query.setParameter("maxPrice", maxPrice);
+        }
+
+        // Pagination
+        query.setFirstResult((pageNumber - 1) * pageSize);
+        query.setMaxResults(pageSize);
+
+        // Execute query and return results
+        return query.getResultList();
+    }
+
 
 
 
