@@ -23,12 +23,12 @@
     <listener>
         <listener-class>iti.jets.presentation.listeners.ContextListener</listener-class>
     </listener>
-    <listener>
-        <listener-class>iti.jets.presentation.listeners.MyHttpSessionListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>iti.jets.presentation.listeners.MyServletRequestListener</listener-class>
-    </listener>
+<!--    <listener>-->
+<!--        <listener-class>iti.jets.presentation.listeners.MyHttpSessionListener</listener-class>-->
+<!--    </listener>-->
+<!--    <listener>-->
+<!--        <listener-class>iti.jets.presentation.listeners.MyServletRequestListener</listener-class>-->
+<!--    </listener>-->
 
     <welcome-file-list>
         <welcome-file>Login.jsp</welcome-file>
