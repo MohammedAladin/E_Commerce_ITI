@@ -1,12 +1,14 @@
 var loader = document.querySelector('.loader');
 window.onload = function() {
-    
+//    addCategory("hasan");
+//    addCategory("yusif");
     console.log("begin of js");
     var countOfPages = document.getElementById('countOfPages');
     var currentPage = document.getElementById('currentPage');
     var nextBtn = document.getElementById('nextBtn');
     var prevBtn = document.getElementById('prevBtn');
     console.log("begin of onload");
+    sendReqToGetCategories();
     displayProducts(1);
 }
 
@@ -226,32 +228,34 @@ function showNotification(message) {
 
 
 function getPriceRangeValues(selectedPriceRanges) {
-    let minValue = Number.POSITIVE_INFINITY;
-    let maxValue = 0;
+    let minValues = [];
+    let maxValues = [];
 
     selectedPriceRanges.forEach(priceRange => {
         switch (priceRange) {
             case 'upTo50':
-                minValue = Math.min(minValue, 0);
-                maxValue = Math.max(maxValue, 50);
+                minValues.push(0);
+                maxValues.push(50);
                 break;
             case '50To100':
-                minValue = Math.min(minValue, 50);
-                maxValue = Math.max(maxValue, 100);
+                minValues.push(50);
+                maxValues.push(100);
                 break;
             case '100To200':
-                minValue = Math.min(minValue, 100);
-                maxValue = Math.max(maxValue, 200);
+                minValues.push(100);
+                maxValues.push(200);
                 break;
             case 'above200':
-                minValue = Math.min(minValue, 200);
-                maxValue = Number.POSITIVE_INFINITY;
+                minValues.push(200);
+                maxValues.push(Number.POSITIVE_INFINITY);
                 break;
             default:
-                // Handle invalid cases
                 break;
         }
     });
+
+    let minValue = minValues.length > 0 ? Math.min(...minValues) : 0;
+    let maxValue = maxValues.length > 0 ? Math.max(...maxValues) : Number.POSITIVE_INFINITY;
 
     return { minValue, maxValue };
 }
@@ -320,9 +324,44 @@ function hideLoader() {
     loader.style.display = 'none';
 }
 
+function addCategory(name) {
+    // Create checkbox element
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = name;
+    checkbox.name = 'filter';
+    checkbox.value = name;
 
+    // Create label element
+    var label = document.createElement('label');
+    label.htmlFor = name;
+    label.appendChild(document.createTextNode(name));
 
+    // Append checkbox and label to a container div
+    var container = document.getElementById('categoriesDiv');
+    //    container.className = 'filter-checkboxes';
+    container.appendChild(checkbox);
+    container.appendChild(label);
+}
 
+function sendReqToGetCategories(){
+    console.log("start send categories request");
+    let xmlHttpCategories = new XMLHttpRequest();
+    xmlHttpCategories.onreadystatechange = function(){
+        if (xmlHttpCategories.readyState == 4 && xmlHttpCategories.status == 200){
+            // Parse the JSON response
+            let categories = JSON.parse(xmlHttpCategories.responseText);
+
+            // Log each category to the console
+            categories.forEach(category => {
+                console.log(" my catttt  "+category);
+                addCategory(category);
+            });
+        }
+    };
+    xmlHttpCategories.open("POST", "app/product", true);
+    xmlHttpCategories.send("");
+}
 
 
 

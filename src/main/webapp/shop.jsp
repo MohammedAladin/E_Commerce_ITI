@@ -225,7 +225,8 @@
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">200 EGP & Above</li>
                                 </ul>
                                 -->
-                        <div class="filter-checkboxes">
+                        <div class="filter-checkboxes" id="categoriesDiv">
+                        <!--
                                 <input type="checkbox" id="vegetables" name="filter" value="vegetables">
                                 <label for="vegetables">Vegetables</label>
 
@@ -234,6 +235,7 @@
 
                                 <input type="checkbox" id="winter-fruits" name="filter" value="winterFruits">
                                 <label for="winter-fruits">Winter Fruits</label>
+                        -->
                         </div>
 
                         <div class="filter-checkboxes">
@@ -252,7 +254,7 @@
 
                         <div class="filter-buttons">
                                 <button onclick="applyFilter(document.getElementById('currentPage').value)">Filter</button>
-                                <button onclick="displayProducts(document.getElementById('currentPage').value)">Clear Filters</button>
+                                <button onclick="displayProducts(1)">Clear Filters</button>
                         </div>
 
 
