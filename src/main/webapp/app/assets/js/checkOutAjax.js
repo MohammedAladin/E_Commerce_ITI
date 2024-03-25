@@ -1,3 +1,4 @@
+var loader = document.querySelector('.loader');
 window.onload = function() {
 
     event.preventDefault();
@@ -11,6 +12,7 @@ window.onload = function() {
     // Load cart data from local storage
     var cartData = JSON.parse(localStorage.getItem('userCart')) || [];
 
+    hideLoader();
 
     console.log('cartData: ' + cartData);
 
@@ -113,4 +115,14 @@ function placeOrder() {
         }
     };
     xhr.send(JSON.stringify(formData));
+}
+
+// Function to show the loader
+function showLoader() {
+    loader.style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    loader.style.display = 'none';
 }
