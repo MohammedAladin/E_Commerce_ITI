@@ -3,6 +3,8 @@ function customAlert(message) {
 
     console.log('Custom alert: ' + message);
     // Create overlay
+
+    
     var overlay = document.createElement('div');
     overlay.style.position = 'fixed';
     overlay.style.top = 0;
