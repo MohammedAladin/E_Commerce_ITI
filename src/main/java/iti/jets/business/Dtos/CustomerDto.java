@@ -88,13 +88,6 @@ public class CustomerDto {
         this.dob = dob;
     }
 
-    public CartDto getCart() {
-        return cart;
-    }
-
-    public void setCart(CartDto cart) {
-        this.cart = cart;
-    }
 
     @Override
     public String toString() {
@@ -108,7 +101,6 @@ public class CustomerDto {
                 ", creditLimit=" + creditLimit +
                 ", dob='" + dob + '\'' +
                 ", country='" + country + '\'' +
-                ", cart=" + cart +
                 '}';
     }
 }
