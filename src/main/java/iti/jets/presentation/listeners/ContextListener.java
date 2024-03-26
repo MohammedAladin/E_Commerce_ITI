@@ -15,6 +15,7 @@ public class ContextListener implements ServletContextListener  {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("ContextListener.contextInitialized..........Model is ready.");
+
         sce.getServletContext().getSessionCookieConfig().setName(null);
         entityManagerFactory= JPAManager.INSTANCE.getEntityManagerFactory();
         contextInitialized = true;
