@@ -133,6 +133,8 @@ function updateProductList(data) {
             var productImg = document.createElement('img');
             productImg.src = 'data:image/jpeg;base64,' + product.productImage;
             productImg.alt = '';
+            productImg.style.width = '100%';  // Set the width
+            productImg.style.height = '230px'; // Set the height
             imageLink.appendChild(productImg);
             productImage.appendChild(imageLink);
 
@@ -211,7 +213,7 @@ function addToCart(productId) {
 
 function goToSingleProductPage(productId) {
             // Construct the URL with the productId parameter
-            var url = "app/singlePage?productId=" + productId;
+            var url = "singlePage?productId=" + productId;
             // Navigate to the server URL
             window.location.href = url;
 }

@@ -253,6 +253,7 @@ function sendRequestToUpdateProduct(product){
         if (xmlHttpupdate.readyState == 4 && xmlHttpupdate.status == 200){
             console.log("updated "+ xmlHttpupdate.responseText);
             clearInputs();
+            mood = 'create';
             tableBody.innerHTML = '';
             sendRequestToGetProducts();
             //you need to update product in views or relod
