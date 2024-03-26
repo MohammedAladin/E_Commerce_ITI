@@ -199,7 +199,7 @@ function addToCart(productId) {
                         showNotification('Please sign in to add products to your cart.');
                         // Redirect user after showing the notification
                         setTimeout(function() {
-                            window.location.href = "http://localhost:9090/e_commerce/Login.jsp";
+                            window.location.href = "Login.jsp";
                         }, 5000); // Redirect after 5 seconds
                     }
                     } else {
@@ -213,7 +213,7 @@ function addToCart(productId) {
 
 function goToSingleProductPage(productId) {
             // Construct the URL with the productId parameter
-            var url = "http://localhost:9090/e_commerce/app/singlePage?productId=" + productId;
+            var url = "app/singlePage?productId=" + productId;
             // Navigate to the server URL
             window.location.href = url;
 }

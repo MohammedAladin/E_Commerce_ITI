@@ -176,7 +176,7 @@ function addToCart(productId,quantityInput) {
                         showNotification('Please sign in to add products to your cart.');
                         // Redirect user after showing the notification
                         setTimeout(function() {
-                            window.location.href = "http://localhost:9090/e_commerce/Login.jsp";
+                            window.location.href = "Login.jsp";
                         }, 5000); // Redirect after 5 seconds
                     }
                     } else {
