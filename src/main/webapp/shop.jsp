@@ -34,6 +34,65 @@
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 
+<style>
+
+
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #f28123;
+        color: #fff;
+        padding: 20px 30px; /* Increased padding for bigger size */
+        border-radius: 5px;
+        display: none;
+        z-index: 9999; /* Ensure it appears on top of other elements */
+        font-size: 18px; /* Increased font size */
+        font-weight: bold; /* Added font weight */
+    }
+    .filter-checkboxes {
+        margin-bottom: 5px; /* Decreased margin-bottom */
+        text-align: center; /* Center horizontally */
+    }
+    .filter-checkboxes label {
+        display: inline-block;
+        padding: 3px 8px; /* Decreased padding */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px; /* Added margin-right */
+    }
+    .filter-checkboxes input[type="checkbox"] {
+        display: none;
+    }
+    .filter-checkboxes input[type="checkbox"]:checked + label {
+        background-color: #f28123;
+        color: #fff;
+    }
+
+    .filter-buttons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .filter-buttons button {
+        padding: 10px 40px; /* Decreased padding */
+        background-color: #f28123;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .filter-buttons button:hover {
+        background-color: #d15f00;
+    }
+</style>
+
+
+     <!-- <link rel="stylesheet" href="assets/css/priceStyle.css"> -->
+
+
 </head>
 <body>
 
@@ -142,37 +201,146 @@
 
 
     <!-- products -->
-    <div class="product-section mt-150 mb-150">
+    <div class="notification" id="notification"></div>
+    <div class="product-section mt-100 mb-100">
         <div class="container">
 
              <div class="row">
                 <div class="col-md-12">
                     <div class="product-filters">
 
-                        <ul>
-                            <!--
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".strawberry">Strawberry</li>
-                            <li data-filter=".berry">Berry</li>
-                            <li data-filter=".lemon">Lemon</li>
-
-                            -->
-                                <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">All</li>
+                                <!--
+                                <ul>
+                                <li class="active" data-filter="*">All</li>
+                                <li data-filter=".strawberry">Strawberry</li>
+                                <li data-filter=".berry">Berry</li>
+                                <li data-filter=".lemon">Lemon</li>
+                                <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">Vegetables</li>
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">Summer Fruits</li>
-                                <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">Winter Fruits</li></br></br>
+                                <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">Winter Fruits</li></br>
+                                <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">All</li>
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">Up to 50 EGP</li>
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">50 to 100 EGP</li>
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">100 to 200 EGP</li>
                                 <li style="display: inline-block;" onmouseover="this.style.backgroundColor='#f28123'" onmouseout="this.style.backgroundColor=''">200 EGP & Above</li>
+                                </ul>
+                                -->
+                        <div class="filter-checkboxes" id="categoriesDiv">
+                        <!--
+                                <input type="checkbox" id="vegetables" name="filter" value="vegetables">
+                                <label for="vegetables">Vegetables</label>
 
-                        </ul>
+                                <input type="checkbox" id="summer-fruits" name="filter" value="summerFruits">
+                                <label for="summer-fruits">Summer Fruits</label>
+
+                                <input type="checkbox" id="winter-fruits" name="filter" value="winterFruits">
+                                <label for="winter-fruits">Winter Fruits</label>
+                        -->
+                        </div>
+
+                        <div class="filter-checkboxes">
+                            <input type="checkbox" id="up-to-50-egp" name="price-filter" value="upTo50">
+                            <label for="up-to-50-egp">Up to 50 EGP</label>
+
+                            <input type="checkbox" id="50-to-100-egp" name="price-filter" value="50To100">
+                            <label for="50-to-100-egp">50 to 100 EGP</label>
+
+                            <input type="checkbox" id="100-to-200-egp" name="price-filter" value="100To200">
+                            <label for="100-to-200-egp">100 to 200 EGP</label>
+
+                            <input type="checkbox" id="above-200-egp" name="price-filter" value="above200">
+                            <label for="above-200-egp">200 EGP & above</label>
+                        </div>
+
+                        <div class="filter-buttons">
+                                <button onclick="applyFilter(document.getElementById('currentPage').value)">Filter</button>
+                                <button onclick="clearFilter()">Clear Filters</button>
+                        </div>
+
+
+                        <!--
+                        <div class="price-slider">
+                            <div class="price-range" id="price-range">
+                                PRICE FROM <span id="min-value">0</span> TO <span id="max-value">200</span></br>
+                            </div>
+                            <input id="price-input" type="range" min="0" max="1000" value="200" step="1" onchange="updateRangeValue(this.value)">
+                        </div>
+
+                        <div class="filter-buttons">
+                                <button onclick="applyFilter()">Filter</button>
+                                <button onclick="displayProducts(document.getElementById('currentPage').value)">Clear Filters</button>
+                        </div>
+                        -->
+
+                        <!--
+                        <div class="slider-container">
+                            <div class="headerr"><h2 class="projtitle">Price Range</h2></div>
+                            <span>Minimum Price</span><input type="number" id="min-price" placeholder="Min Price" min="0"></br>
+                            <span>Maximum Price</span><input type="number" id="max-price" placeholder="Max Price" min="1" max="1000">
+                            <div class="slider" id="slider">
+                                <div class="slider-thumb left" id="slider-thumb left"></div>
+                                <div class="slider-thumb right" id="slider-thumb right"></div>
+                            </div>
+                        </div>
+
+                        -->
+
+
+
+
+                        <!--
+                        <div class="custom-wrapperr">
+
+                                    <div class="headerr">
+                                        <h2 class="projtitle">
+                                              Price Range
+                                          </h2>
+                                    </div>
+
+                                    <div class="price-input-container">
+                                        <div class="price-input">
+                                            <div class="price-field">
+                                                <span>Minimum Price</span>
+                                                <input type="number"
+                                                       class="min-input"
+                                                       value="250">
+                                            </div>
+                                            <div class="price-field">
+                                                <span>Maximum Price</span>
+                                                <input type="number"
+                                                       class="max-input"
+                                                       value="850">
+                                            </div>
+                                        </div>
+                                        <div class="slider-container">
+                                            <div class="price-slider">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="range-input">
+                                        <input type="range"
+                                               class="min-range"
+                                               min="0"
+                                               max="1000"
+                                               value="250"
+                                               step="1">
+                                        <input type="range"
+                                               class="max-range"
+                                               min="0"
+                                               max="1000"
+                                               value="850"
+                                               step="1">
+                                    </div>
+                        </div>
+                        -->
+
                     </div>
                 </div>
             </div>
 
-
             <div class="row product-lists" id="productListtt">
-
             </div>
 
             <div class="row">
@@ -181,19 +349,13 @@
                     <input type="hidden" value="${requestScope.countOfPages}" id="countOfPages">
                     <input type="hidden" value="1" id="currentPage">
                         <ul>
-
                              <li><a  id="prevBtn" class="btn">Prev</a></li>
-
-                            <!-- <button id="prevBtn">Prev</button> -->
-
-                       <!-- <li><a href="#">1</a></li> -->
-                        <!--	<li><a class="active" href="#">2</a></li> -->
-                        <!--	<li><a href="#">3</a></li> -->
-
+                                           <!-- <button id="prevBtn">Prev</button> -->
+                                           <!-- <li><a href="#">1</a></li> -->
+                                           <!--	<li><a class="active" href="#">2</a></li> -->
+                                           <!--	<li><a href="#">3</a></li> -->
                              <li><a  id="nextBtn" class="btn">Next</a></li>
-
-                            <!-- <button id="nextBtn">Next</button> -->
-
+                                            <!-- <button id="nextBtn">Next</button> -->
                         </ul>
                     </div>
                 </div>
@@ -337,6 +499,51 @@
     <script src="assets/js/home.js"></script>
 	<!-- products javascript -->
     <script src="assets/js/products.js"></script>
+    <!--
+    <script>
+    function updateRangeValue(value) {
+                document.getElementById('min-value').innerText = 0;
+                document.getElementById('max-value').innerText = value;
+            }
+    document.addEventListener("DOMContentLoaded", function(event) {
+            var initialValue = document.getElementById('price-input').value;
+            updateRangeValue(initialValue);
+        });
+
+    </script>
+    -->
+
+    <!--
+    <script>
+            const minPriceInput = document.getElementById('min-price');
+            const maxPriceInput = document.getElementById('max-price');
+            const slider = document.getElementById('slider');
+            const leftThumb = document.getElementById('slider-thumb left');
+            const rightThumb = document.getElementById('slider-thumb right');
+
+            // Update the slider when the min or max price inputs change
+            minPriceInput.addEventListener('input', updateSlider);
+            maxPriceInput.addEventListener('input', updateSlider);
+
+            // Update the slider position based on the inputs
+            function updateSlider() {
+                const min = parseInt(minPriceInput.value);
+                const max = parseInt(maxPriceInput.value);
+                const sliderWidth = slider.clientWidth;
+
+                // Calculate the left and right thumb positions
+                const leftPosition = (min / max) * sliderWidth;
+                const rightPosition = sliderWidth - ((max / max) * sliderWidth);
+
+                // Update the thumb positions
+                leftThumb.style.left = `${leftPosition}px`;
+                rightThumb.style.left = `${rightPosition}px`;
+            }
+    </script>
+    -->
+
+
+         <!-- <script src="assets/js/priceScript.js"></script> -->
 
 </body>
 </html>

@@ -38,6 +38,7 @@ public class CommandFactory {
                 case "singlePage" -> new SinglePageCommand();
                 case "relatedProducts" -> new RelatedProductsCommand();
                 case "addFrom-shop" -> new AddFromShopCommand();
+                case "filterProducts" -> new FilterProductsCommand();
 
                 default -> null;
             };

@@ -30,6 +30,10 @@ function goToSingleProductPage(productId) {
 }
 
 function updateSingleProduct(data) {
+
+//    var productCategoryDiv = document.createElement('div');
+//    productCategoryDiv.value = data.category;
+//    console.log(data.category);
     // Get the existing container by its ID
     var singleProductContainer = document.getElementById('singleProductContainer');
 
@@ -97,6 +101,7 @@ function updateSingleProduct(data) {
     var quantityInput = document.createElement('input');
     quantityInput.type = 'number';
     quantityInput.placeholder = '0';
+    quantityInput.max = data.stockCount;
     form.appendChild(quantityInput);
 
     // Create the add to cart button
@@ -112,7 +117,7 @@ function updateSingleProduct(data) {
 
     // Set the product categories
     var productCategories = document.createElement('p');
-    productCategories.innerHTML = '<strong>Categories: </strong>Fruits, Organic';
+    productCategories.innerHTML = '<strong>Categories: </strong>'+data.category+', Organic';
     productForm.appendChild(productCategories);
 
     // Set the share section
@@ -145,9 +150,16 @@ function updateSingleProduct(data) {
 
 function addToCart(productId,quantityInput) {
 
-//        event.preventDefault();
-//        var productId = this.closest('.single-product-item').getAttribute('productId');
-        // Construct the URL with productId as a query parameter
+        if (!quantityInput.value) {
+                showNotification('Please enter the quantity of products first.');
+                return; // Stop execution if quantityInput is null or empty
+            }
+        if (parseInt(quantityInput.value) > parseInt(quantityInput.max)) {
+                quantityInput.value = quantityInput.max; // Set value to max if it exceeds max
+                showNotification('Please Enter Quantity<='+quantityInput.max);
+                return; // Stop execution
+            }
+
         var timestamp = new Date().getTime();
         var url = 'app/addFrom-shop?productId=' + encodeURIComponent(productId) +"&quantity="+quantityInput.value+"&date="+timestamp;
 
@@ -159,11 +171,14 @@ function addToCart(productId,quantityInput) {
                     if (xhr.status === 200) {
                         var data = xhr.responseText;
                         if (data === 'Product added to cart successfully.') {
-                            alert('Product added to cart successfully.');
-                        } else {
-                            alert('Please sign in to add products to your cart.');
+                        showNotification('Product added to cart successfully.');
+                    } else {
+                        showNotification('Please sign in to add products to your cart.');
+                        // Redirect user after showing the notification
+                        setTimeout(function() {
                             window.location.href = "http://localhost:9090/e_commerce/Login.jsp";
-                        }
+                        }, 5000); // Redirect after 5 seconds
+                    }
                     } else {
                         console.error('Failed to add product to cart.');
                     }
@@ -172,6 +187,14 @@ function addToCart(productId,quantityInput) {
             xhr.send(); // No need to send data in the body for a simple POST request
 
 }
+function showNotification(message) {
+        var notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(function() {
+            notification.style.display = 'none';
+        }, 5000); // Hide after 5 seconds
+    }
 
 function goToRelatedProduct() {
     console.log("inside goToRelatedProduct");

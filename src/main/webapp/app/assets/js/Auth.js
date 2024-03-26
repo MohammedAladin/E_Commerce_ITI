@@ -82,7 +82,6 @@ function signUp(){
             console.log("success");
             console.log(xhr.responseText);
             localStorage.setItem('user', xhr.responseText);
-            hideLoader();
             window.location.href = "index.jsp";
         }
         if(xhr.status === 401){
@@ -129,7 +128,6 @@ function signIn() {
             console.log("success");
             console.log(xhr.responseText);
             localStorage.setItem('user', xhr.responseText);
-            hideLoader();
             window.location.href = "index.jsp";
             return;
         }

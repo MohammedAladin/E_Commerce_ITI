@@ -5,6 +5,7 @@ package iti.jets.presentation.PagesCommands;
 //import com.google.gson.Gson;
 //import com.google.gson.Gson;
 import com.google.gson.Gson;
+import iti.jets.Services.AdminService;
 import iti.jets.business.Dtos.ProductDtoYousif;
 import iti.jets.business.ProductService;
 import iti.jets.presentation.FrontCommand;
@@ -20,31 +21,35 @@ import java.util.List;
 public class ProductCommand extends FrontCommand {
 
 
-    ProductService productService = new ProductService();
+
     @Override
     public void doPostProcess() throws ServletException, IOException {
-        System.out.println("ProductCommand.doPostProcess()");
-        System.out.println("hello"+request.getParameter("pageNumber"));
 
-        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-        System.out.println("pageNumber ="+pageNumber);
-        List<ProductDtoYousif> productDtoYousifs = productService.retrieveProductsPerPage(pageNumber);
-        List<String> productsJson = new ArrayList<>();
-        System.out.println("productDtoYousifs size = "+ productDtoYousifs.size());
-        for(ProductDtoYousif dto: productDtoYousifs){
-            System.out.println(dto.getId());
-            productsJson.add(productToJson(dto));
-        }
-//        Gson gson = new Gson();
-//        System.out.println(gson);
-//        String json = gson.toJson(productDtoYousifs);
-//        System.out.println(json);
-//        response.setContentType("text/html");
+//        System.out.println("hello"+request.getParameter("pageNumber"));
+//
+//        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+//        System.out.println("pageNumber ="+pageNumber);
+//        List<ProductDtoYousif> productDtoYousifs = productService.retrieveProductsPerPage(pageNumber);
+//        List<String> productsJson = new ArrayList<>();
+//        System.out.println("productDtoYousifs size = "+ productDtoYousifs.size());
+//        for(ProductDtoYousif dto: productDtoYousifs){
+//            System.out.println(dto.getId());
+//            productsJson.add(productToJson(dto));
+//        }
+//
+//        response.setContentType("application/json");
+//        PrintWriter out = response.getWriter();
+//        System.out.println("before sending json");
+//        out.print(productsJson);
+//        out.flush();
+        System.out.println("ProductCommand.doPostProcess()");
+        AdminService adminService = new AdminService();
+        List<String> allCategoryNames = adminService.getAllCategoryNames();
+        Gson gson = new Gson();
+        String jsonCategoryNames = gson.toJson(allCategoryNames);
         response.setContentType("application/json");
-        PrintWriter out = response.getWriter();
-        System.out.println("before sending json");
-        out.print(productsJson);
-        out.flush();
+        response.getWriter().print(jsonCategoryNames);
+
     }
 
 
@@ -76,7 +81,7 @@ public class ProductCommand extends FrontCommand {
     public void doGetProcess() throws ServletException, IOException {
             System.out.println("ProductCommand.doGetProcess()");
             System.out.println("hello"+request.getParameter("pageNumber"));
-
+            ProductService productService = new ProductService();
             int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
             System.out.println("pageNumber ="+pageNumber);
             List<ProductDtoYousif> productDtoYousifs = productService.retrieveProductsPerPage(pageNumber);
