@@ -69,8 +69,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.jsp">
-
-								<img src="assets/img/logo.png" alt="">
+								<img src="app/assets/img/logo.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -78,45 +77,45 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
+								<li><a href="../index.jsp">Home</a>
+								</li>
+								<li><a href="../about.jsp">About</a></li>
+								<!-- <li><a href="#">Pages</a>
 									<ul class="sub-menu">
-										<li><a href="index.jsp">Static Home</a></li>
+										<li><a href="404.jsp">404 page</a></li>
+										<li><a href="about.jsp">About</a></li>
+										<li><a href="cart.jsp">Cart</a></li>
+										<li><a href="checkout.jsp">Check Out</a></li>
+										<li><a href="contact.jsp">Contact</a></li>
+										<li><a href="news.jsp">News</a></li>
+										<li><a href="shop.jsp">Shop</a></li>
+									</ul>
+								</li> -->
+								<li><a href="../news.jsp">News</a>
+									<ul class="sub-menu">
+										<li><a href="news.jsp">News</a></li>
+										<li><a href="single-news.jsp">Single News</a></li>
+									</ul>
+								</li>
+								<li><a href="../contact.jsp">Contact</a></li>
+								<li  class="current-list-item"><a href="/e_commerce/app/Shop">Shop</a>
+									<!-- <ul class="sub-menu">
+										<li><a href="shop.jsp">Shop</a></li>
+										<li><a href="checkout.jsp">Check Out</a></li>
+										<li><a href="single-product.jsp">Single Product</a></li>
+										<li><a href="cart.jsp">Cart</a></li>
+									</ul> -->
+								</li>
 
-										<li><a href="index_2.html">Slider Home</a></li>
-									</ul>
-								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.html">404 page</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
-									</ul>
-								</li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
+								<li>
+                                    <div class="header-icons">
+                                        <a class="profile-icon" href="../profile_page.jsp"><i class="fas fa-user"></i></a>
+                                    </div>
+                                </li> 
+
 								<li>
 									<div class="header-icons">
-
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="shopping-cart" href="../cart.jsp"><i class="fas fa-shopping-cart"></i></a>
 									</div>
 								</li>
 							</ul>
@@ -130,6 +129,7 @@
 		</div>
 	</div>
 	<!-- end header -->
+
 
 	<!-- search area -->
 	<div class="search-area">
@@ -272,79 +272,76 @@
 	</div>
 	<!-- end logo carousel -->
 
-	<!-- footer -->
 
-    	<div class="footer-area">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-lg-3 col-md-6">
-    					<div class="footer-box about-widget">
-    						<h2 class="widget-title">About us</h2>
-    						<p>Yousif Hossam Mohamed Salah
-    						 Hassan Kamal ElDien Mahmoud
-    						 Mohamed Alaa ElDien Ibrahim</p>
-    					</div>
-    				</div>
-    				<div class="col-lg-3 col-md-6">
-    					<div class="footer-box get-in-touch">
-    						<h2 class="widget-title">Get in Touch</h2>
-    						<ul>
-    							<li>34/8, East Banha, Qaluybia, Egypt.</li>
-    							<li>support@fruitkha.com</li>
-    							<li>+20 1001083571</li>
-    						</ul>
-    					</div>
-    				</div>
-    				<div class="col-lg-3 col-md-6">
-    					<div class="footer-box pages">
-    						<h2 class="widget-title">Pages</h2>
-    						<ul>
-    							<li><a href="index.jsp">Home</a></li>
-    							<li><a href="about.html">About</a></li>
-    							<li><a href="services.html">Shop</a></li>
-    							<li><a href="news.html">News</a></li>
-    							<li><a href="contact.html">Contact</a></li>
-    						</ul>
-    					</div>
-    				</div>
-    				<div class="col-lg-3 col-md-6">
-    					<div class="footer-box subscribe">
-    						<h2 class="widget-title">Subscribe</h2>
-    						<p>Subscribe to our mailing list to get the latest updates.</p>
-    						<form action="index.jsp">
-    							<input name="emailll" id="emailll" type="email" placeholder="Email">
-    <!--							<button type="submit"><i class="fas fa-paper-plane"></i></button>-->
-    							<button onclick="showAllProducts()"><i class="fas fa-paper-plane"></i></button>
-    						</form>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    	<!-- end footer -->
-
-    	<!-- copyright -->
-    	<div class="copyright">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-lg-6 col-md-12">
-    					<p>Copyrights &copy; 2024 - <a href="https://www.linkedin.com/in/yousif-hossam/">Yousif Hossam</a>,  All Rights Reserved.</p>
-    				</div>
-    				<div class="col-lg-6 text-right col-md-12">
-    					<div class="social-icons">
-    						<ul>
-    							<li><a href="https://www.facebook.com/yousif.hossam10" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-    							<li><a href="https://twitter.com/Yousif_AlAhly" target="_blank"><i class="fab fa-twitter"></i></a></li>
-    							<li><a href="https://www.instagram.com/yousifhossam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-    							<li><a href="https://www.linkedin.com/in/yousif-hossam/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-    							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
-    						</ul>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    	<!-- end copyright -->
+		<!-- footer -->
+		<div class="footer-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="footer-box about-widget">
+							<h2 class="widget-title">About us</h2>
+							<p>Youssef, Mohamed, and Hassan form a dynamic team driving an e-commerce project forward. With diverse expertise in development, design, and marketing, we're poised to revolutionize online shopping.</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="footer-box get-in-touch">
+							<h2 class="widget-title">Get in Touch</h2>
+							<ul>
+								<li>Giza, Smart Village, ITI, JETS, EWD TRACK.</li>
+								<li>support@fruitkha.com</li>
+								<li>01010467364</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="footer-box pages">
+							<h2 class="widget-title">Pages</h2>
+							<ul>
+								<li><a href="../index.jsp">Home</a></li>
+								<li><a href="../about.jsp">About</a></li>
+								<li><a href="/e_commerce/app/Shop">Shop</a></li>
+								<li><a href="../news.jsp">News</a></li>
+								<li><a href="../contact.jsp">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="footer-box subscribe">
+							<h2 class="widget-title">Subscribe</h2>
+							<p>Subscribe to our mailing list to get the latest updates.</p>
+							<form action="../index.jsp">
+								<input type="email" placeholder="Email">
+								<button type="submit"><i class="fas fa-paper-plane"></i></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end footer -->
+		
+		<!-- copyright -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-12">
+						<p>Copyrights &copy; 2023 - <a href="https://github.com/MohammedAladin/E_Commerce_ITI">Github</a>,  All Rights Reserved.</p>
+					</div>
+					<div class="col-lg-6 text-right col-md-12">
+						<div class="social-icons">
+							<ul>
+								<li><a href="https://www.facebook.com/yousif.hossam10" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://twitter.com/Yousif_AlAhly" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="https://www.instagram.com/yousifhossam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/hassankamalv/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end copyright -->
 	
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>

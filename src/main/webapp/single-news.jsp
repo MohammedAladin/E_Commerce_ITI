@@ -292,7 +292,7 @@
 						<ul>
 							<li><a href="index.jsp">Home</a></li>
 							<li><a href="about.jsp">About</a></li>
-							<li><a href="services.jsp">Shop</a></li>
+							<li><a href="/e_commerce/app/Shop">Shop</a></li>
 							<li><a href="news.jsp">News</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
 						</ul>
