@@ -84,6 +84,11 @@ public class CartCommand extends FrontCommand {
             }else if(type.equals("4")){
                 System.out.println("i'm in cart Command to clear cart");
                 cartService.clearCart(customer.getId());
+            }else if(type.equals("5")){
+                System.out.println("i'm in cart Command to clear cart");
+                session.setAttribute("customer", null);
+
+                System.out.println("customer now = "+ (Customer) session.getAttribute("customer"));
             }
         }else {
             response.getWriter().print("null");

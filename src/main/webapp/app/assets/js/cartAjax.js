@@ -1,4 +1,4 @@
-var cartItems;
+var cartItems = [];
 var loader = document.querySelector('.loader');
 showLoader();
 sendRequestToCart();
@@ -94,7 +94,7 @@ function calculateTotalPrice() {
 
     // Initialize the total price
     var totalPrice = 0;
-    var shipping = 30;
+    var shipping = 50;
 
     // Loop through each row
     rows.forEach(function(row) {
@@ -117,32 +117,39 @@ function calculateTotalPrice() {
 document.getElementById('update-cart-btn').addEventListener('click', function() {
     console.log('update cart button clicked');
     updateCartItemsRequest();
-    document.getElementById('progress-bar').style.display = 'block';
-
 });
 
 document.getElementById('check-out-cart-btn').addEventListener('click', function() {
-    console.log('update cart button clicked');
-    updateCartItemsRequest();
-    saveCart(cartItems);
-    window.location.href = 'checkout.jsp';
+    if(cartItems.length > 0){
+
+        console.log('update cart button clicked' + cartItems.length);
+        updateCartItemsRequest();
+        saveCart(cartItems);
+        window.location.href = 'checkout.jsp';
+    }else{
+        showNotification("Please add Item To CheckOut");
+    }
 });
 
 
 function updateCartItemsRequest(){
     console.log('update cart button clicked');
-    var xmlHttp2 = new XMLHttpRequest();
-    xmlHttp2.onreadystatechange = function() {
-        if (xmlHttp2.readyState == 4 && xmlHttp2.status == 200){
-            console.log("response: " + xmlHttp2.responseText);
-            document.getElementById('progress-bar').style.display = 'none';
+        if(cartItems.length > 0){
+        var xmlHttp2 = new XMLHttpRequest();
+        xmlHttp2.onreadystatechange = function() {
+            if (xmlHttp2.readyState == 4 && xmlHttp2.status == 200){
+                console.log("response: " + xmlHttp2.responseText);
+                showNotification("Cart Updated");
+            }
         }
-    }
 
-    xmlHttp2.open("POST", "app/Cart?type=2", true);
-    xmlHttp2.setRequestHeader("Content-Type", "application/json");
-    console.log(" before sending cartItems= "+JSON.stringify(cartItems));
-    xmlHttp2.send(JSON.stringify(cartItems));
+        xmlHttp2.open("POST", "app/Cart?type=2", true);
+        xmlHttp2.setRequestHeader("Content-Type", "application/json");
+        console.log(" before sending cartItems= "+JSON.stringify(cartItems));
+        xmlHttp2.send(JSON.stringify(cartItems));
+    }else{
+        showNotification("Please add Item To Update Cart");
+    }
 }
 
 
@@ -168,4 +175,14 @@ function showLoader() {
 // Function to hide the loader
 function hideLoader() {
     loader.style.display = 'none';
+}
+
+function showNotification(message) {
+    var notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(function() {
+        notification.style.display = 'none';
+    }, 3000); // Hide after 5 seconds
+
 }
