@@ -41,7 +41,11 @@
         </div>
     </div>
     <!--PreLoader Ends-->
-	
+
+	<!-- start notification div -->
+        <div class="notification" id="notification"></div>
+    <!-- end notification div -->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -91,11 +95,20 @@
 
 								<li><a id="signIn-button">SignIn</a>
 								<li><a id="logOut-button">Logout</a>
+
+								<li>
+                                    <div class="header-icons">
+                                        <a class="profile-icon" href="profile_page.jsp"><i class="fas fa-user"></i></a>
+                                    </div>
+                                </li>
+
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.jsp"><i class="fas fa-shopping-cart"></i></a>
 									</div>
 								</li>
+
+
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

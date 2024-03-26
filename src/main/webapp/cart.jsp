@@ -42,6 +42,10 @@
     </div>
     <!--PreLoader Ends-->
 
+    <!-- start notification div -->
+    	<div class="notification" id="notification"></div>
+    <!-- end notification div -->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -174,15 +178,15 @@
 							<tbody>
 								<tr class="total-data">
 									<td><strong>Subtotal: </strong></td>
-									<td id="cart-sub-total">$500</td>
+									<td id="cart-sub-total">$0</td>
 								</tr>
 								<tr class="total-data">
 									<td><strong>Shipping: </strong></td>
-									<td id="cart-shipping" >$45</td>
+									<td id="cart-shipping" >$50</td>
 								</tr>
 								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td id="cart-total" >$545</td>
+									<td id="cart-total" >$50</td>
 								</tr>
 							</tbody>
 						</table>

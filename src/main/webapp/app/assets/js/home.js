@@ -27,6 +27,9 @@ window.onload = function() {
         localStorage.removeItem('user');
         signInButton.style.display = "block";
         logoutButton.style.display = "none";
+        showNotification("logged out successfuly");
+        sendRequestToDeleteCustomerFromSession();
+        sessionStorage.clear();
     });
 
     // Add event listener to the sign-in button
@@ -70,4 +73,29 @@ function showLoader() {
 // Function to hide the loader
 function hideLoader() {
     loader.style.display = 'none';
+}
+
+
+function showNotification(message) {
+    console.log("second")
+    var notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(function() {
+        notification.style.display = 'none';
+    }, 3000); // Hide after 5 seconds
+
+}
+
+function sendRequestToDeleteCustomerFromSession() {
+    console.log('deleteCartItemFromServer');
+    let xmlHttp3 = new XMLHttpRequest();
+    xmlHttp3.onreadystatechange = function() {
+        if (xmlHttp3.readyState == 4 && xmlHttp3.status == 200){
+            console.log("response: " + deleted);
+        }
+    }
+
+    xmlHttp3.open("GET", "app/Cart?type=5", true);
+    xmlHttp3.send(null);
 }
