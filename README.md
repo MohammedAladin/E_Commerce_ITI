@@ -31,13 +31,17 @@
 
 # **Technologies Used** 
   - Java Servlet and JSP.
-  - MVC Architecture with Front Controller pattern.
+  - Layerd Architecture with MVC, Front Controller and intercepting filter design patterns.
   - Hibernate for ORM database operations.
   - MySQL Database.
   - HTML, CSS, Bootstrap for frontend.
   - JavaScript and jQuery for client-side interactions.
   - AJAX for asynchronous operations.
   - Tomcat as the server container.
+  - Apache Maven
+  - JAXB
+  - Model Mapper
+    
 
 # **Installation & Usage** 
   - Dependencies
