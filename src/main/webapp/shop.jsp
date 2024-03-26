@@ -254,7 +254,7 @@
 
                         <div class="filter-buttons">
                                 <button onclick="applyFilter(document.getElementById('currentPage').value)">Filter</button>
-                                <button onclick="displayProducts(1)">Clear Filters</button>
+                                <button onclick="clearFilter()">Clear Filters</button>
                         </div>
 
 
