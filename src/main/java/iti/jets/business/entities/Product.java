@@ -29,7 +29,7 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name='" + productName + '\'' + ", description='" + productDescription  + ", price=" + price + ", quantity=" + stockCount + ", category=" + category.getCategoryName() + '}';
+        return "Product{" + "id=" + id + ", name='" + productName + '\'' + ", description='" + productDescription  + ", price=" + price + ", quantity=" + stockCount + '}';
     }
 
     @Id

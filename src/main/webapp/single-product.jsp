@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f28123;
+            color: #fff;
+            padding: 20px 30px; /* Increased padding for bigger size */
+            border-radius: 5px;
+            display: none;
+            z-index: 9999; /* Ensure it appears on top of other elements */
+            font-size: 18px; /* Increased font size */
+            font-weight: bold; /* Added font weight */
+        }
+    </style>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -179,7 +195,8 @@
 							</form>
 
 							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-							<p><strong>Categories: </strong>Fruits, Organic</p>
+
+							<p><strong>Categories: </strong>${requestScope.categoryName}, Organic</p>
 						</div>
 						<h4>Share:</h4>
 						<ul class="product-share">
@@ -198,6 +215,7 @@
 	<!-- end single product -->
 
 	<!-- more products -->
+	<div class="notification" id="notification"></div>
 	<div class="more-products mb-150">
 		<div class="container">
 			<div class="row">

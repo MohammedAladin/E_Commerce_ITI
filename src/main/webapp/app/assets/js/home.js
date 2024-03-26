@@ -1,3 +1,4 @@
+var loader = document.querySelector('.loader');
 window.onload = function() {
 
     
@@ -5,6 +6,7 @@ window.onload = function() {
     const signInButton = document.getElementById("signIn-button");
     const logoutButton = document.getElementById("logOut-button");
 
+    hideLoader();
     if (localStorage.getItem('user')) {
         console.log('Email exists');
         console.log(localStorage.getItem('user'));
@@ -60,3 +62,12 @@ function showAllProducts() {
                 }
         }
 
+// Function to show the loader
+function showLoader() {
+    loader.style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    loader.style.display = 'none';
+}

@@ -1,5 +1,6 @@
 var cartItems;
-
+var loader = document.querySelector('.loader');
+showLoader();
 sendRequestToCart();
 // Save cart to localStorage
 function saveCart(cart) {
@@ -27,6 +28,7 @@ function handleStateChange() {
                 console.log(cartItem);
                 addRowToTable(cartItem);
             });
+            hideLoader();
         }
 
         
@@ -155,4 +157,15 @@ function deleteCartItemFromServer(cartItemId) {
 
     xmlHttp3.open("GET", "app/Cart?type=3&cartItemId="+cartItemId, true);
     xmlHttp3.send(null);
+}
+
+
+// Function to show the loader
+function showLoader() {
+    loader.style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    loader.style.display = 'none';
 }

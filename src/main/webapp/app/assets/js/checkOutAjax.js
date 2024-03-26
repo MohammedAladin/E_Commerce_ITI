@@ -1,3 +1,4 @@
+var loader = document.querySelector('.loader');
 window.onload = function() {
 
     event.preventDefault();
@@ -11,6 +12,7 @@ window.onload = function() {
     // Load cart data from local storage
     var cartData = JSON.parse(localStorage.getItem('userCart')) || [];
 
+    hideLoader();
 
     console.log('cartData: ' + cartData);
 
@@ -26,10 +28,10 @@ window.onload = function() {
         var row = document.createElement('tr');
 
         var productName = document.createElement('td');
-        productName.textContent = item.product.productName;
+        productName.textContent = item.productName;
 
         var totalPrice = document.createElement('td');
-        totalPrice.textContent = '$' + item.product.price * item.quantity;
+        totalPrice.textContent = '$' + item.price * item.quantity;
 
         row.appendChild(productName);
         row.appendChild(totalPrice);
@@ -38,7 +40,7 @@ window.onload = function() {
         orderDetailsBody.appendChild(row);
 
         // Update the subtotal
-        subtotal += item.product.price * item.quantity;
+        subtotal += item.price * item.quantity;
     });
 
     // Add subtotal, shipping, and total rows
@@ -106,11 +108,56 @@ function placeOrder() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             localStorage.removeItem('userCart');
-            window.location.href = 'index.jsp';
+            startSendNotification("Sucessful Order, Waiting for others :)");
+            showLoader();
+            sendRequestToClearCart();
         }
         else{
             console.log('Error: ' + xhr.responseText);
         }
     };
     xhr.send(JSON.stringify(formData));
+}
+
+// Function to show the loader
+function showLoader() {
+    loader.style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    loader.style.display = 'none';
+}
+
+function startSendNotification(message){
+    console.log("first")
+    showNotification(message);
+    // Redirect user after showing the notification
+
+    setTimeout(function() {
+        window.location.href = 'index.jsp';
+    }, 3000); // Redirect after 5 seconds
+}
+
+function showNotification(message) {
+    console.log("second")
+    var notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(function() {
+        notification.style.display = 'none';
+    }, 3000); // Hide after 5 seconds
+
+}
+
+function sendRequestToClearCart(){
+    var xmlHttp2 = new XMLHttpRequest();
+    xmlHttp2.onreadystatechange = function() {
+        if (xmlHttp2.readyState == 4 && xmlHttp2.status == 200){
+            console.log("cart cleared")
+        }
+    }
+
+    xmlHttp2.open("GET", "app/Cart?type=4", true);
+    xmlHttp2.send(null);
 }
