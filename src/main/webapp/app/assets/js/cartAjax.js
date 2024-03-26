@@ -73,7 +73,7 @@ function addRowToTable(cartItem) {
     document.getElementById(`quantity-${cartItem.id}`).addEventListener('change', function() {
         console.log('quantity changed' + cartItem.id);
         var quantity = document.getElementById(`quantity-${cartItem.id}`).value;
-        var total = quantity * cartItem.product.price;
+        var total = quantity * cartItem.price;
         document.getElementById(`total-${cartItem.id}`).innerHTML = `$${total}`;
 
         cartItems.forEach(function(item) {
@@ -177,6 +177,9 @@ function hideLoader() {
     loader.style.display = 'none';
 }
 
+function showCouponNotification(){
+    showNotification("Coupon not valid");
+}
 function showNotification(message) {
     var notification = document.getElementById('notification');
     notification.textContent = message;

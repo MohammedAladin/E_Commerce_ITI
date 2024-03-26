@@ -167,6 +167,7 @@ function sendRequestToGetProducts() {
 function handleStateChange() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
         console.log("response: " + xmlHttp.responseText);
+        
         hideLoader();
        dataPro = JSON.parse(xmlHttp.responseText);
        dataPro.forEach(function(product) {

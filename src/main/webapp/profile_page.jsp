@@ -100,7 +100,6 @@
                                                         <div class="form-group">
                                                             <label>Current Password</label>
                                                             <input class="form-control" type="password" name="currentPassword">
-                                                            <i class="fa fa-eye position-absolute" style="right: 10px; top: 50%;" onclick="togglePasswordVisibility('currentPassword')"></i>
 
                                                         </div>
                                                         <div class="form-group">

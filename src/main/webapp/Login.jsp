@@ -57,6 +57,9 @@
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
 				<button class="ghost" id="signIn">Sign In</button>
+				<a href="/e_commerce/app/Shop">
+                    <button class="ghost" id="guest">Guest</button>
+                </a>
 				<a href="admin.jsp">
                     <button class="ghost" id="admin">Admin</button>
                 </a>
@@ -65,6 +68,9 @@
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
+                <a href="/e_commerce/app/Shop">
+                    <button class="ghost" id="guest">Guest</button>
+                </a>
 				<a href="admin.jsp">
                     <button class="ghost" id="admin">Admin</button>
                 </a>
