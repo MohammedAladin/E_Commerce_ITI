@@ -44,6 +44,7 @@
     
 
 # **Installation & Usage** 
+  - you can try our web site from [here](https://fruititi.j.layershift.co.uk/e_commerce/)
   - Dependencies
     - JAVA:
       - You can find Java17 [here](https://dev.mysql.com/downloads/installer/).
