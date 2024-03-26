@@ -197,10 +197,8 @@ function addToCart(productId) {
                         showNotification('Product added to cart successfully.');
                     } else {
                         showNotification('Please sign in to add products to your cart.');
-                        // Redirect user after showing the notification
-                        setTimeout(function() {
-                            window.location.href = "Login.jsp";
-                        }, 5000); // Redirect after 5 seconds
+                        
+                
                     }
                     } else {
                         console.error('Failed to add product to cart.');
@@ -223,7 +221,7 @@ function showNotification(message) {
         notification.style.display = 'block';
         setTimeout(function() {
             notification.style.display = 'none';
-        }, 5000); // Hide after 5 seconds
+        }, 3000); // Hide after 5 seconds
     }
 
 
