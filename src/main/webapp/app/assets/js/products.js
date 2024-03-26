@@ -364,4 +364,22 @@ function sendReqToGetCategories(){
 }
 
 
+function clearFilter() {
+        displayProducts(1);
+        deselectPriceCheckboxes();
+        deselectCategoryCheckboxes();
+}
 
+function deselectPriceCheckboxes() {
+    var checkboxes = document.getElementsByName('price-filter');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+    }
+}
+
+function deselectCategoryCheckboxes() {
+    var checkboxes = document.getElementsByName('filter');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+    }
+}
