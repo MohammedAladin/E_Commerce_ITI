@@ -1,20 +1,19 @@
 package iti.jets.business.entities;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "cartitem")
-public class CartItem {
+public class CartItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cartItemId", nullable = false)
+    @Column(name = "cartItemId")
     private Integer id;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
-
-    @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)
-    private BigDecimal totalPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cartId")
@@ -40,14 +39,6 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public Cart getCart() {
         return cart;
     }
@@ -64,4 +55,25 @@ public class CartItem {
         this.product = product;
     }
 
+    public void incrementCartItem(int number){
+        quantity+= number;
+    }
+
+    public void decrementCartItem(int number){
+        quantity-=number;
+    }
+
+    public double getTotalPrice(){
+        return product.getPrice().doubleValue() * quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", cart=" + cart +
+                ", product=" + product +
+                '}';
+    }
 }

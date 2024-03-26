@@ -1,27 +1,27 @@
 package iti.jets.business.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "cart")
-public class Cart {
+public class Cart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cartId", nullable = false)
+    @Column(name = "cartId")
     private Integer id;
 
-    @Column(name = "totalPrice", precision = 10, scale = 2, nullable = false)
-    private BigDecimal totalPrice;
-
-    @OneToMany(mappedBy = "cart")
+    @OneToMany(mappedBy = "cart" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<CartItem> cartItems = new LinkedHashSet<>();
 
     @OneToOne
     @JoinColumn(name = "customer_id")
+    @JsonBackReference
+
     private Customer customer;
 
     public Integer getId() {
@@ -32,28 +32,51 @@ public class Cart {
         this.id = id;
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public Set<CartItem> getCartitems() {
+    public Set<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void setCartitems(Set<CartItem> cartItems) {
+    public void setCartItems(Set<CartItem> cartItems) {
         this.cartItems = cartItems;
     }
 
-    public Customer getCustomers() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomers(Customer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public void addCartItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+    }
+
+    public void clearCart() {
+        System.out.println("clearing cart.");
+        System.out.println("cartItems: " + cartItems.size());
+        cartItems.clear();
+        System.out.println("cartItems: " + cartItems.size());
+    }
+
+    public double getTotalPrice(){
+        double result = 0.0;
+
+        for (CartItem item: cartItems){
+            result += (item.getProduct().getPrice().doubleValue() * item.getQuantity());
+        }
+
+        return result;
+    }
+
+
+    public void addItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+        cartItem.setCart(this);
+    }
+    public void removeItem(CartItem cartItem) {
+        cartItems.remove(cartItem);
+        cartItem.setCart(null);
     }
 
 }

@@ -15,11 +15,25 @@ public class FrontControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("Front-Controller...");
+        System.out.println("doGet Front-Controller...");
+        System.out.println("requesturi"+request.getRequestURI());
 
         FrontCommand command = getCommand(request);
         command.init(request, response);
-        command.process();
+        command.doGetProcess();
+
+    }
+
+    protected void doPost(HttpServletRequest request,
+                         HttpServletResponse response) throws ServletException, IOException {
+
+        System.out.println("doPost-> Front-Controller...");
+        System.out.println("requesturi: "+request.getRequestURI());
+
+
+        FrontCommand command = getCommand(request);
+        command.init(request, response);
+        command.doPostProcess();
 
     }
 
@@ -28,16 +42,12 @@ public class FrontControllerServlet extends HttpServlet {
         String commandName = request.getRequestURI();
 
         commandName = getURI(commandName);
+        System.out.println("FrontControllerServlet.getCommand() " + commandName);
 
         CommandFactory factory = new CommandFactory();
 
-        FrontCommand command = factory.getCommand(commandName);
-
-        if (command == null) {
-            command = new UnknownCommand();
-        }
-
-        return command;
+        System.out.println("after factory.getCommand()...");
+        return factory.getCommand(commandName);
 
     }
 
@@ -51,6 +61,47 @@ public class FrontControllerServlet extends HttpServlet {
         }
         else if(uri.contains("Home")){
             res = "Home";
+        }
+        else if(uri.contains("Auth")){
+            res = "Auth";
+        }
+        else if(uri.contains("Error404")){
+            res = "Error404";
+        } else if (uri.contains("Cart")) {
+            res = "Cart";
+        }
+        else if(uri.contains("CheckOut")){
+            res = "CheckOut";
+        }
+        else if(uri.contains("EditProfile")){
+            res = "EditProfile";
+        }
+        else if(uri.contains("ProfileImage")) {
+            res = "ProfileImage";
+        }
+        else if(uri.contains("Hom2")){
+            res = "Hom2";
+        }
+        else if(uri.contains("Shop")){
+            res = "Shop";
+        }
+        else if(uri.contains("product")){
+            res="product";
+        }
+        else if(uri.contains("singleProduct")){
+            res="singleProduct";
+        }
+        else if(uri.contains("singlePage")){
+            res="singlePage";
+        }
+        else if(uri.contains("relatedProducts")){
+            res="relatedProducts";
+        }
+        else if(uri.contains("addFrom-shop")){
+            res="addFrom-shop";
+        }
+        else if(uri.contains("filterProducts")){
+            res="filterProducts";
         }
         return res;
     }

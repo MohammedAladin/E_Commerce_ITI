@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fdfdfd;
+    color: #222;
+    font-family: monospace;
+    font-size: large;
+}
+
+.crud {
+    width: 80%;
+    margin: auto;
+}
+
+.head {
+    background-color: #f28123;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 20px; /* Add this line */
+    border-bottom-right-radius: 20px;
+}
+
+input {
+    width: 97.6%;
+    height: 25px;
+    outline: none;
+    border: none;
+    background: #173b58;
+    margin: 4px 0;
+    border-radius: 15px;
+    padding: 12px;
+    color: #ffffff;
+}
+
+input:focus{
+    background: #173b58;
+    transform: scale(1.03);
+}
+input:hover{
+    transform: scale(1.03);
+    transition: 0.6s;
+}
+
+.numbers input{
+    width: 47%;
+}
+
+#total{
+    background: #e00909;
+    border-radius: 15px;
+    padding: 10px 7px;
+}
+
+
+#total::before{
+    content: 'Total: ';
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-family: monospace;
+    background-color: #f28123; /* Green color */
+    padding-top: 10px;
+    padding-bottom: 30px;
+    display: block; 
+    margin: auto; 
+}
+
+button:hover{
+    background: #e9bea2;
+    letter-spacing: 1px;
+}
+
+button:active{
+    background: #333232;
+}
+
+
+.delete {
+    background-color: #f51101; /* Red color */
+ }
+
+.btnSearch{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnSearch button{
+    width: 45%;
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+table th{
+    text-transform: uppercase;
+}
+th,td{
+    padding: 5px;
+}
+
+#deleteAll{
+    margin: 20px 0;
+}
+
+
+select {
+    width: 100%;
+    height: 50px;
+    background: #173b58;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    outline: none;
+    transition: 0.6s;
+}
+
+select:focus {
+    background: #173b58;
+    transform: scale(1.03);
+}
+
+select:hover {
+    transform: scale(1.03);
+    transition: 0.6s;
+}
+
+#menu {
+    position: fixed;
+    left: 0;
+    top: 15%;
+}
+
+#menu button {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #f28123;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#menu button:hover {
+    background-color: #f28123;
+}
+
+th {
+    background-color: #173b58;
+    color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Add this line */
+}
+
+
+
+
+

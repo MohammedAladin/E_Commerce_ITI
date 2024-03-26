@@ -2,16 +2,39 @@ package iti.jets.business.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product implements Serializable {
+
+    public Product(){
+
+    }
+
+    public Product(String productName, String productDescription, byte[] productImage, BigDecimal price, Integer stockCount, Category category, Set<BuyedItem> buyedItems, Set<CartItem> cartItems, Set<ProductReview> productreviews) {
+        this.productName = productName;
+        this.productDescription = productDescription;
+        this.productImage = productImage;
+        this.price = price;
+        this.stockCount = stockCount;
+        this.category = category;
+        this.buyedItems = buyedItems;
+        this.cartItems = cartItems;
+        this.productreviews = productreviews;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", name='" + productName + '\'' + ", description='" + productDescription  + ", price=" + price + ", quantity=" + stockCount + '}';
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productId", nullable = false)
+    @Column(name = "productId")
     private Integer id;
 
     @Column(name = "productName", nullable = false)
@@ -21,7 +44,7 @@ public class Product {
     @Column(name = "productDescription", nullable = false)
     private String productDescription;
 
-    @Column(name = "productImage", nullable = false)
+    @Column(name = "productImage")
     private byte[] productImage;
 
     @Column(name = "price", precision = 10, scale = 2, nullable = false)
@@ -97,6 +120,10 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public void decrementQuantity(int number){
+        stockCount-=number;
     }
 
     public Set<BuyedItem> getBuyeditems() {

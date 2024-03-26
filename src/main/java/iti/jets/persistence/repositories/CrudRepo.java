@@ -1,22 +1,22 @@
 package iti.jets.persistence.repositories;
 
-
-import iti.jets.persistence.connection.JPAManager;
+import iti.jets.business.entities.Cart;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import jakarta.servlet.http.HttpServletRequest;
 
+import javax.persistence.PersistenceException;
 import java.util.List;
 
 public abstract class CrudRepo<T,ID> {
     protected EntityManager entityManager;
 
-    protected CrudRepo(){
+    protected CrudRepo(EntityManager entityManager){
 //        this.entityManager = (EntityManager) request.getAttribute("entityManager");
-        this.entityManager = JPAManager.INSTANCE.getEntityManagerFactory().createEntityManager();
+        this.entityManager = entityManager;
     }
 
     public T save(T entity){
+        System.out.println("saving..");
         entityManager.getTransaction().begin();
         entityManager.persist(entity);
         entityManager.getTransaction().commit();
@@ -35,6 +35,7 @@ public abstract class CrudRepo<T,ID> {
     }
 
     public T update(T entity){
+        System.out.println("updating..");
         entityManager.getTransaction().begin();
         T updatedEntity = entityManager.merge(entity);
         entityManager.getTransaction().commit();
@@ -51,15 +52,20 @@ public abstract class CrudRepo<T,ID> {
         entityManager.getTransaction().commit();
     }
 
-    public T deleteById(Class<T> objClass, ID id){
-        entityManager.getTransaction().begin();
+    public T deleteById(Class<T> objClass, ID id) throws RuntimeException{
+        try {
 
-        T entity = entityManager.find(objClass,id);
-        if (entity != null) {
-            entityManager.remove(entity);
+            entityManager.getTransaction().begin();
+
+            T entity = entityManager.find(objClass, id);
+            if (entity != null) {
+                entityManager.remove(entity);
+            }
+
+            entityManager.getTransaction().commit();
+            return entity;
+        }catch (Exception e){
+            throw new RuntimeException("cannot delete this item");
         }
-
-        entityManager.getTransaction().commit();
-        return entity;
     }
 }

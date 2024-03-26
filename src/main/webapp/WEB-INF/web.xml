@@ -1,7 +1,6 @@
 <web-app xmlns= "https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation= "https://jakarta.ee/xml/ns/jakartaee
- https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         xsi:schemaLocation= "https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version= "5.0"
          metadata-complete= "true">
 
@@ -11,11 +10,59 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/app/assets/*</url-pattern>
+    </servlet-mapping>
+
+
+
+    <listener>
+        <listener-class>iti.jets.presentation.listeners.ContextListener</listener-class>
+    </listener>
+<!--    <listener>-->
+<!--        <listener-class>iti.jets.presentation.listeners.MyHttpSessionListener</listener-class>-->
+<!--    </listener>-->
+<!--    <listener>-->
+<!--        <listener-class>iti.jets.presentation.listeners.MyServletRequestListener</listener-class>-->
+<!--    </listener>-->
+
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>Login.jsp</welcome-file>
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>iti.jets.presentation.admin.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>SecureUpload</web-resource-name>
+            <url-pattern>/admin.jsp</url-pattern>
+            <url-pattern>/admin_orders.jsp</url-pattern>
+            <url-pattern>/admin_users.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>
+                let only hassan use this feature
+            </description>
+            <role-name>fruitManager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <role-name>fruitManager</role-name>
+    </security-role>
+    <login-config>
+        <auth-method>DIGEST</auth-method>
+    </login-config>
 
 </web-app>

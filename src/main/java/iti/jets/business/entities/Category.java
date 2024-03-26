@@ -9,7 +9,7 @@ import java.util.Set;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "categoryId", nullable = false)
+    @Column(name = "categoryId")
     private Integer id;
 
     @Column(name = "categoryName", nullable = false)
