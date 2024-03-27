@@ -240,16 +240,16 @@
 
                         <div class="filter-checkboxes">
                             <input type="checkbox" id="up-to-50-egp" name="price-filter" value="upTo50">
-                            <label for="up-to-50-egp">Up to 50 EGP</label>
+                            <label for="up-to-50-egp">Up to 50$</label>
 
                             <input type="checkbox" id="50-to-100-egp" name="price-filter" value="50To100">
-                            <label for="50-to-100-egp">50 to 100 EGP</label>
+                            <label for="50-to-100-egp">50 to 100$</label>
 
                             <input type="checkbox" id="100-to-200-egp" name="price-filter" value="100To200">
-                            <label for="100-to-200-egp">100 to 200 EGP</label>
+                            <label for="100-to-200-egp">100 to 200$</label>
 
                             <input type="checkbox" id="above-200-egp" name="price-filter" value="above200">
-                            <label for="above-200-egp">200 EGP & above</label>
+                            <label for="above-200-egp">200$ & above</label>
                         </div>
 
                         <div class="filter-buttons">
