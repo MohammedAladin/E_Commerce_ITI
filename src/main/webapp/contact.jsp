@@ -139,9 +139,11 @@
 			<div class="row">
 				<div class="col-lg-8 mb-5 mb-lg-0">
 					<div class="form-title">
-						<h2>Have you any question?</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
-					</div>
+                        <h2>Do you have any questions?</h2>
+                        <p>Feel free to reach out to us if you have any questions or inquiries. We're here to help you!</p>
+                        <p>Whether you need assistance with our products, want to learn more about our services, or have any other concerns, don't hesitate to contact us.</p>
+                        <p>You can reach us via email, phone, or by filling out the contact form below. Our team will get back to you as soon as possible.</p>
+                    </div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
 						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
@@ -163,7 +165,7 @@
 					<div class="contact-form-wrap">
 						<div class="contact-form-box">
 							<h4><i class="fas fa-map"></i> Shop Address</h4>
-							<p>34/8, East Hukupara <br> Gifirtok, Sadan. <br> Country Name</p>
+							<p>Giza, Smart Village, ITI, JETS, EWD TRACK <br> EGYPT</p>
 						</div>
 						<div class="contact-form-box">
 							<h4><i class="far fa-clock"></i> Shop Hours</h4>

@@ -145,10 +145,11 @@
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
 							<h2>Pomegranate can prevent heart disease</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint soluta, similique quidem fuga vel voluptates amet doloremque corrupti. Perferendis totam voluptates eius error fuga cupiditate dolorum? Adipisci mollitia quod labore aut natus nobis. Rerum perferendis, nobis hic adipisci vel inventore facilis rem illo, tenetur ipsa voluptate dolorem, cupiditate temporibus laudantium quidem recusandae expedita dicta cum eum. Quae laborum repellat a ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, praesentium, dicta. Dolorum inventore molestias velit possimus, dolore labore aliquam aperiam architecto quo reprehenderit excepturi ipsum ipsam accusantium nobis ducimus laudantium.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum est aperiam voluptatum id cupiditate quae corporis ex. Molestias modi mollitia neque magni voluptatum, omnis repudiandae aliquam quae veniam error! Eligendi distinctio, ab eius iure atque ducimus id deleniti, vel alias sint similique perspiciatis saepe necessitatibus non eveniet, quo nisi soluta.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt beatae nemo quaerat, doloribus obcaecati odio!</p>
+                            <p>Pomegranates are known for their potential to prevent heart disease. Rich in antioxidants, such as flavonoids and polyphenols, they help reduce inflammation and lower blood pressure, thus promoting heart health.</p>
+                            <p>Studies suggest that consuming pomegranate or its juice regularly may improve cholesterol levels by reducing LDL (bad) cholesterol and increasing HDL (good) cholesterol.</p>
+                            <p>The high levels of punicalagins in pomegranate juice have been linked to its potent antioxidant effects, which can help protect the heart against oxidative stress and damage caused by free radicals.</p>
+                            <p>Furthermore, pomegranates contain natural compounds that may improve blood flow to the heart and reduce the risk of atherosclerosis, a condition characterized by the buildup of plaque in the arteries.</p>
+
 						</div>
 
 						<div class="comments-list-wrap">
@@ -159,16 +160,16 @@
 										<img src="app/assets/img/avaters/avatar1.png" alt="">
 									</div>
 									<div class="comment-text-body">
-										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+										<h4>Hassan Kamal <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
+										<p>" Passionate about Java software engineering, our candidate brings a fervent dedication to mastering the intricacies of the language, coupled with a relentless drive to innovate and solve complex problems. Their enthusiasm for Java extends beyond mere coding; it's a commitment to crafting elegant solutions and pushing the boundaries of what's possible in software development "</p>
 									</div>
 									<div class="single-comment-body child">
 										<div class="comment-user-avater">
 											<img src="app/assets/img/avaters/avatar3.png" alt="">
 										</div>
 										<div class="comment-text-body">
-											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
-											<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+											<h4>Yousif Hossam <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
+											<p>" Beyond technical proficiency, our Java software engineer is fueled by an unwavering passion for building impactful software solutions that resonate with end-users. They understand that behind every line of code lies the potential to create meaningful experiences, and they approach their work with a sense of purpose and dedication, striving to leave a lasting positive impact on the projects they undertake "</p>
 										</div>
 									</div>
 								</div>
@@ -177,8 +178,8 @@
 										<img src="app/assets/img/avaters/avatar2.png" alt="">
 									</div>
 									<div class="comment-text-body">
-										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+										<h4>Mohamed Alaa <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
+										<p>" With a deep-seated passion for Java, our candidate consistently seeks out opportunities to deepen their expertise, whether through personal projects, online courses, or active participation in developer communities. Their relentless pursuit of knowledge fuels their desire to stay ahead of industry trends and adopt best practices, ensuring that their skills remain cutting-edge and adaptable to evolving technology landscapes. "</p>
 									</div>
 								</div>
 							</div>

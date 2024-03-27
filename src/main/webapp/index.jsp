@@ -213,7 +213,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
 						<h3><span class="orange-text">Our</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Indulge in the freshest bounty of nature with our exquisite selection of fruits and vegetables. Sourced directly from local farms and orchards, our products bring the essence of nature to your table. From crisp apples to succulent tomatoes, each item is handpicked to ensure premium quality and flavor. Elevate your culinary experience with our diverse range of seasonal delights, and savor the goodness of nature with every bite.</p>
 					</div>
 				</div>
 			</div>
@@ -354,8 +354,8 @@
 					<div class="abt-text">
 						<p class="top-sub">Since Year 2024</p>
 						<h2>We are <span class="orange-text">Fruitkha</span></h2>
-						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
+						<p>At Fruitkha, we're passionate about bringing you the freshest and most delicious fruits straight from the orchard to your table. Our commitment to quality ensures that every bite bursts with flavor and nutrients, making every moment a delightful experience.</p>
+                            <p>Discover a world of taste sensations with our carefully curated selection of seasonal fruits sourced from trusted growers around the globe. From succulent strawberries to exotic mangos, we offer a wide array of choices to tantalize your taste buds and inspire healthy living.</p>
 						<a href="about.jsp" class="boxed-btn mt-4">know more</a>
 					</div>
 				</div>
@@ -382,7 +382,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
 						<h3><span class="orange-text">Our</span> News</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Company Fruitkha, a leading provider of innovative solutions in the tech industry, has just released its financial report for the first quarter of the year, revealing record-breaking profits. Despite challenges posed by the ongoing global pandemic, Company X managed to surpass market expectations...</p>
 					</div>
 				</div>
 			</div>
@@ -397,7 +397,7 @@
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
+							<p class="excerpt">This article discusses the importance of planning for the future and the consequences of neglecting responsibilities.</p>
 							<a href="single-news.jsp" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
@@ -411,7 +411,7 @@
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
+							<p class="excerpt">This piece explores the concept of appreciating things in their prime and how value can change over time.</p>
 							<a href="single-news.jsp" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
@@ -425,7 +425,7 @@
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
+							<p class="excerpt">This news item highlights the positive outcomes of positive thinking and its impact on achieving goals.</p>
 							<a href="single-news.jsp" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
