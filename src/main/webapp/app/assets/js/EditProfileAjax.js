@@ -1,4 +1,6 @@
-window.onload = function() {
+window.onload = setDataFromLocalStorage;
+
+function setDataFromLocalStorage() {
 
     userData = JSON.parse(localStorage.getItem('user')) || [];
 
@@ -14,33 +16,10 @@ window.onload = function() {
     userNameHeader.textContent = (userName==null) ? 'User' : userName;
 
     emailHeader.textContent = (userEmail==null) ? 'Email@example.com' : userEmail;
-    loadProfilePicture();
+    
 
 }
-function loadProfilePicture() {
 
-    console.log('Load profile picture');
-    var profilePic = document.getElementById('profilePic');
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'app/ProfileImage', true);
-    xhr.responseType = 'arraybuffer';
-    xhr.send(null);
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            const arrayBufferView = new Uint8Array(xhr.response);
-            console.log(arrayBufferView)
-
-            const blob = new Blob([arrayBufferView], {type: "image/jpeg"});
-            const urlCreator = window.URL || window.webkitURL;
-            profilePic.src = urlCreator.createObjectURL(blob);
-        }
-        else {
-            profilePic.src = 'app/assets/img/default.jpg';
-        }
-    }
-}
 
 function editCustomer(){
 
@@ -91,7 +70,7 @@ function editCustomer(){
 
     // Create a JSON object
     var data = {
-        customerName: formData.get('username'),
+        customerName: (formData.get('username') == "")? null: formData.get('username'),
         email: (formData.get('email')== "") ? null : formData.get('email'),
         password: (password !=="") ? password : currentUserPassword,
         dob: formData.get('dob'),
@@ -110,6 +89,14 @@ function editCustomer(){
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
+            let oldUser = JSON.parse(localStorage.getItem('user')) || [];
+            oldUser.customerName = (data.customerName != null) ? data.customerName: oldUser.customerName; 
+            oldUser.email = (data.email != null) ? data.email: oldUser.email; 
+            oldUser.password = (data.password != null) ? data.password: oldUser.password; 
+            oldUser.dob = (data.dob != null) ? data.dob: oldUser.dob; 
+
+            localStorage.setItem('user', JSON.stringify(oldUser));
+            setDataFromLocalStorage();
             console.log('Profile updated successfully');
             customAlert('Profile updated successfully');
             //window.location.href = 'index.jsp';

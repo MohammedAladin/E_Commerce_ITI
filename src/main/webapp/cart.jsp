@@ -199,7 +199,7 @@
 					<div class="coupon-section">
 						<h3>Apply Coupon</h3>
 						<div class="coupon-form-wrap">
-							<form action="index.jsp">
+							<form action="#" onsubmit="return showCouponNotification();">
 								<p><input type="text" placeholder="Coupon"></p>
 								<p><input type="submit" value="Apply"></p>
 							</form>

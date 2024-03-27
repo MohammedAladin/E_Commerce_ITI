@@ -31,15 +31,20 @@
 
 # **Technologies Used** 
   - Java Servlet and JSP.
-  - MVC Architecture with Front Controller pattern.
+  - Layerd Architecture with MVC, Front Controller and intercepting filter design patterns.
   - Hibernate for ORM database operations.
   - MySQL Database.
   - HTML, CSS, Bootstrap for frontend.
   - JavaScript and jQuery for client-side interactions.
   - AJAX for asynchronous operations.
   - Tomcat as the server container.
+  - Apache Maven
+  - JAXB
+  - Model Mapper
+    
 
 # **Installation & Usage** 
+  - you can try our web site from [here](https://fruititi.j.layershift.co.uk/e_commerce/)
   - Dependencies
     - JAVA:
       - You can find Java17 [here](https://dev.mysql.com/downloads/installer/).
