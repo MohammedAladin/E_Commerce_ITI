@@ -10,6 +10,7 @@ window.onload = function() {
     console.log("begin of onload");
     sendReqToGetCategories();
     displayProducts(1);
+    handleButtons(currentPage.value);
 }
 
 //prevBtn.addEventListener("click", (e) => {
@@ -26,10 +27,34 @@ prevBtn.addEventListener("click", (e) => {
 
     if (filterCheckboxes.length > 0 || priceFilterCheckboxes.length > 0) {
         // If any checkboxes are checked, call applyFilter instead of displayProducts
-        applyFilter(currentPage.value);
+//        applyFilter(currentPage.value);
+//        handleFilteredButtons(currentPage.value);
+
+        setTimeout(function() {
+                applyFilter(currentPage.value);
+
+                // Call handleFilteredButtons after another 1 second delay
+                setTimeout(function() {
+                    handleFilteredButtons(currentPage.value);
+                }, 1000);
+            }, 1000);
+
+
+
     } else {
         // If no checkboxes are checked, call displayProducts
         displayProducts(currentPage.value);
+        handleButtons(currentPage.value);
+
+//            setTimeout(function() {
+//                            displayProducts(currentPage.value);
+//
+//                            // Call handleFilteredButtons after another 1 second delay
+//                            setTimeout(function() {
+//                                handleButtons(currentPage.value);
+//                            }, 1000);
+//                        }, 1000);
+
     }
 });
 
@@ -47,11 +72,36 @@ nextBtn.addEventListener("click", (e) => {
 
     if (filterCheckboxes.length > 0 || priceFilterCheckboxes.length > 0) {
         // If any checkboxes are checked, call applyFilter instead of displayProducts
-        applyFilter(currentPage.value);
+//        applyFilter(currentPage.value);
+//        handleFilteredButtons(currentPage.value);
+
+            setTimeout(function() {
+                            applyFilter(currentPage.value);
+
+                            // Call handleFilteredButtons after another 1 second delay
+                            setTimeout(function() {
+                                handleFilteredButtons(currentPage.value);
+                            }, 1000);
+                        }, 1000);
+
+
     } else {
         // If no checkboxes are checked, call displayProducts
         displayProducts(currentPage.value);
+        handleButtons(currentPage.value);
+
+//            setTimeout(function() {
+//                                        displayProducts(currentPage.value);
+//
+//                                        // Call handleFilteredButtons after another 1 second delay
+//                                        setTimeout(function() {
+//                                            handleButtons(currentPage.value);
+//                                        }, 1000);
+//                                    }, 1000);
+
+
     }
+
 });
 
 function handleButtons(num) {
@@ -70,6 +120,31 @@ function handleButtons(num) {
         nextBtn.disabled = false; // Enable the button
     }
 }
+
+function handleFilteredButtons(num) {
+    let totalPagesForFilteredProductss = document.getElementById("totalPagesForFilteredProducts").value;
+    console.log("totalPagesForFilteredProductss : "+totalPagesForFilteredProductss);
+    if (num === "1") {
+        prevBtn.classList.add("disabled");
+//        console.log("prev button is disabled");
+        prevBtn.disabled = true; // Disable the button
+    } else {
+        prevBtn.classList.remove("disabled");
+//        console.log("prev button is enabled");
+        prevBtn.disabled = false; // Enable the button
+    }
+
+    if (num === totalPagesForFilteredProductss || totalPagesForFilteredProductss === "0") {
+        nextBtn.classList.add("disabled");
+//        console.log("next button is disabled");
+        nextBtn.disabled = true; // Disable the button
+    } else {
+        nextBtn.classList.remove("disabled");
+//        console.log("next button is enabled");
+        nextBtn.disabled = false; // Enable the button
+    }
+}
+
 
 
 
@@ -170,7 +245,7 @@ function updateProductList(data) {
             // Append the product column to the productList div
             productList.appendChild(productCol);
         });
-        handleButtons(currentPage.value);
+//        handleButtons(currentPage.value);
     } else {
         // Display an error message if data is not an array
         productList.innerHTML = 'ERROR';
@@ -302,7 +377,14 @@ function applyFilter(pageNo) {
                 // Parse the JSON response
 
                 var data = JSON.parse(req.responseText);
+                console.log(data);
+                var hiddenInputt = document.getElementById('totalPagesForFilteredProducts');
 
+//                var totalPagesForFilteredProducts = getCookie("totalPagesForFilteredProducts");
+//                    var totalPagesForFilteredProducts = data[0].totalPagesForFilteredProducts;
+                hiddenInputt.value=data[0].totalPagesForFilteredProducts;
+//                console.log("totalPagesForFilteredProducts = "+totalPagesForFilteredProducts);
+                console.log("totalPagesForFilteredProducts = "+hiddenInputt.value);
                 updateProductList(data);
             }
         };
@@ -313,6 +395,19 @@ function applyFilter(pageNo) {
 }
 
 
+function getCookie(name) {
+    let cookieArray = document.cookie.split('; ');
+
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookiePair = cookieArray[i].split('=');
+
+        if (name == cookiePair[0]) {
+            return cookiePair[1];
+        }
+    }
+
+    return null;
+}
 
 // Function to show the loader
 function showLoader() {
@@ -365,7 +460,9 @@ function sendReqToGetCategories(){
 
 
 function clearFilter() {
+        document.getElementById('currentPage').value=1;
         displayProducts(1);
+        handleButtons(1);
         deselectPriceCheckboxes();
         deselectCategoryCheckboxes();
 }
@@ -382,4 +479,27 @@ function deselectCategoryCheckboxes() {
     for (var i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = false;
     }
+}
+
+//function applyFilterAndHandleButtons() {
+//    var currentPageValuee = document.getElementById('currentPage').value;
+//    console.log("currentPageValuee = "+currentPageValuee);
+//    applyFilter(currentPageValuee);
+//    handleFilteredButtons(currentPageValuee);
+//}
+
+function applyFilterAndHandleButtons() {
+    document.getElementById('currentPage').value=1;
+    var currentPageValue = document.getElementById('currentPage').value;
+    console.log("currentPageValue = " + currentPageValue);
+
+    // Call applyFilter after 1 second delay
+    setTimeout(function() {
+        applyFilter(currentPageValue);
+
+        // Call handleFilteredButtons after another 1 second delay
+        setTimeout(function() {
+            handleFilteredButtons(currentPageValue);
+        }, 1000);
+    }, 1000);
 }

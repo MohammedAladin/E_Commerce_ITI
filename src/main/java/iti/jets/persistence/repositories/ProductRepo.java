@@ -102,6 +102,49 @@ public class ProductRepo extends CrudRepo<Product,Integer>{
         return query.getResultList();
     }
 
+    public long countFilteredProducts(String categories, BigDecimal minPrice, BigDecimal maxPrice) {
+        StringBuilder countJpqlBuilder = new StringBuilder("SELECT COUNT(p) FROM Product p WHERE 1 = 1");
+
+        // Add filters based on provided criteria
+        if (categories != null && !categories.isEmpty()) {
+            String[] categoryArray = categories.split(",");
+            countJpqlBuilder.append(" AND p.category.categoryName IN (");
+            for (int i = 0; i < categoryArray.length; i++) {
+                if (i > 0) {
+                    countJpqlBuilder.append(",");
+                }
+                countJpqlBuilder.append(":category").append(i);
+            }
+            countJpqlBuilder.append(")");
+        }
+        if (minPrice != null) {
+            countJpqlBuilder.append(" AND p.price >= :minPrice");
+        }
+        if (maxPrice != null && maxPrice.compareTo(BigDecimal.valueOf(-1)) != 0) {
+            countJpqlBuilder.append(" AND p.price <= :maxPrice");
+        }
+
+        // Create query and set parameters
+        Query countQuery = entityManager.createQuery(countJpqlBuilder.toString());
+
+        if (categories != null && !categories.isEmpty()) {
+            String[] categoryArray = categories.split(",");
+            for (int i = 0; i < categoryArray.length; i++) {
+                countQuery.setParameter("category" + i, categoryArray[i]);
+            }
+        }
+        if (minPrice != null) {
+            countQuery.setParameter("minPrice", minPrice);
+        }
+        if (maxPrice != null && maxPrice.compareTo(BigDecimal.valueOf(-1)) != 0) {
+            countQuery.setParameter("maxPrice", maxPrice);
+        }
+
+        // Execute query and return the count
+        return (long) countQuery.getSingleResult();
+    }
+
+
 
 
 

@@ -85,4 +85,8 @@ public class ProductService {
         return productDtoYousifs;
     }
 
+    public long getFilteredProductsCount(String categories, BigDecimal minPrice, BigDecimal maxPrice){
+        return productRepo.countFilteredProducts(categories, minPrice, maxPrice);
+    }
+
 }

@@ -240,20 +240,21 @@
 
                         <div class="filter-checkboxes">
                             <input type="checkbox" id="up-to-50-egp" name="price-filter" value="upTo50">
-                            <label for="up-to-50-egp">Up to 50 EGP</label>
+                            <label for="up-to-50-egp">Up to 50$</label>
 
                             <input type="checkbox" id="50-to-100-egp" name="price-filter" value="50To100">
-                            <label for="50-to-100-egp">50 to 100 EGP</label>
+                            <label for="50-to-100-egp">50 to 100$</label>
 
                             <input type="checkbox" id="100-to-200-egp" name="price-filter" value="100To200">
-                            <label for="100-to-200-egp">100 to 200 EGP</label>
+                            <label for="100-to-200-egp">100 to 200$</label>
 
                             <input type="checkbox" id="above-200-egp" name="price-filter" value="above200">
-                            <label for="above-200-egp">200 EGP & above</label>
+                            <label for="above-200-egp">200$ & above</label>
                         </div>
 
                         <div class="filter-buttons">
-                                <button onclick="applyFilter(document.getElementById('currentPage').value)">Filter</button>
+                            <!--    <button onclick="applyFilter(document.getElementById('currentPage').value)">Filter</button> -->
+                                    <button onclick="applyFilterAndHandleButtons()">Filter</button>
                                 <button onclick="clearFilter()">Clear Filters</button>
                         </div>
 
@@ -347,6 +348,8 @@
                 <div class="col-lg-12 text-center">
                     <div class="pagination-wrap">
                     <input type="hidden" value="${requestScope.countOfPages}" id="countOfPages">
+                    <input type="hidden"  id="totalPagesForFilteredProducts">
+
                     <input type="hidden" value="1" id="currentPage">
                         <ul>
                              <li><a  id="prevBtn" class="btn">Prev</a></li>
@@ -401,9 +404,9 @@
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
 
-						<p>Yousif Hossam Mohamed Salah
-						 Hassan Kamal ElDien Mahmoud
-						  Mohamed Alaa ElDien Ibrahim</p>
+						<p>Yousif Hossam Mohamed Salah,
+						 Hassan Kamal ElDien Mahmoud,
+						  Mohamed Alaa ElDien Ibrahim.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">

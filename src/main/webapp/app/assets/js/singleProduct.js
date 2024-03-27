@@ -102,6 +102,7 @@ function updateSingleProduct(data) {
     quantityInput.type = 'number';
     quantityInput.placeholder = '0';
     quantityInput.max = data.stockCount;
+    quantityInput.value = 1;
     form.appendChild(quantityInput);
 
     // Create the add to cart button
@@ -259,10 +260,15 @@ function updateRelatedProducts(data) {
 
         // Create the add to cart button
         var addToCartLink = document.createElement('a');
-        addToCartLink.href = 'cart.html';
+//        addToCartLink.href = 'cart.html';
         addToCartLink.className = 'cart-btn';
         addToCartLink.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-        singleProductItemDiv.appendChild(addToCartLink);
+        addToCartLink.addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent the default behavior of the <a> element
+                            addToCart2(product.productId); // Call the addToCart function with the productId
+                        });
+            singleProductItemDiv.appendChild(addToCartLink);
+//        singleProductItemDiv.appendChild(addToCartLink);
 
         // Append the single product item to the related product container
         relatedProductContainer.appendChild(singleProductItemDiv);
@@ -278,4 +284,35 @@ function showLoader() {
 // Function to hide the loader
 function hideLoader() {
     loader.style.display = 'none';
+}
+
+function addToCart2(productId) {
+
+//        event.preventDefault();
+//        var productId = this.closest('.single-product-item').getAttribute('productId');
+        // Construct the URL with productId as a query parameter
+        var timestamp = new Date().getTime();
+        var url = 'app/addFrom-shop?productId=' + encodeURIComponent(productId) +"&quantity=1&date="+timestamp;
+
+        var xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = xhr.responseText;
+                if (data === 'Product added to cart successfully.') {
+                        showNotification('Product added to cart successfully.');
+                    } else {
+                        showNotification('Please sign in to add products to your cart.');
+
+
+                    }
+                    } else {
+                        console.error('Failed to add product to cart.');
+                    }
+                }
+            };
+            xhr.send(); // No need to send data in the body for a simple POST request
+
 }

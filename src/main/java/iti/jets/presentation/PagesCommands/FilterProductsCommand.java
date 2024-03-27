@@ -27,7 +27,7 @@ public class FilterProductsCommand extends FrontCommand {
         System.out.println("inside FilterProductsCommand doGetProcess");
         // Extract parameters from the request
         BigDecimal minPrice = BigDecimal.valueOf(Integer.parseInt(request.getParameter("minPrice")));
-        BigDecimal maxPrice = request.getParameter("maxPrice").equals("Infinity")? BigDecimal.valueOf(-1) : BigDecimal.valueOf(Integer.parseInt(request.getParameter("maxPrice")));
+        BigDecimal maxPrice = request.getParameter("maxPrice").equals("Infinity") ? BigDecimal.valueOf(-1) : BigDecimal.valueOf(Integer.parseInt(request.getParameter("maxPrice")));
         String categories = request.getParameter("categories");
         int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 
@@ -37,10 +37,14 @@ public class FilterProductsCommand extends FrontCommand {
         System.out.println("Categories: " + categories);
         System.out.println("Page Number: " + pageNumber);
 
-        List<ProductDtoYousif> productDtoYousifs = productService.retrieveFilteredProducts(categories,minPrice,maxPrice,pageNumber,6);
+        List<ProductDtoYousif> productDtoYousifs = productService.retrieveFilteredProducts(categories, minPrice, maxPrice, pageNumber, 6);
+        long countOfFilteredProducts = productService.getFilteredProductsCount(categories, minPrice, maxPrice);
+        int totalPagesForFilteredProducts = (int) Math.ceil((double) countOfFilteredProducts / 6);
+        System.out.println(totalPagesForFilteredProducts);
+        // Generate JSON for each product along with totalPagesForFilteredProducts
         List<String> productsJson = new ArrayList<>();
-        for(ProductDtoYousif productDtoYousif : productDtoYousifs){
-            productsJson.add(productToJson(productDtoYousif));
+        for (ProductDtoYousif productDtoYousif : productDtoYousifs) {
+            productsJson.add(productToJson(productDtoYousif, totalPagesForFilteredProducts));
         }
 
         response.setContentType("application/json");
@@ -51,17 +55,20 @@ public class FilterProductsCommand extends FrontCommand {
         System.out.println("after sending json");
     }
 
-    private String productToJson( ProductDtoYousif productDtoYousif) {
+    private String productToJson(ProductDtoYousif productDtoYousif, int totalPagesForFilteredProducts) {
         JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
-        jsonObjectBuilder.add( "productId", productDtoYousif.getId() )
+        jsonObjectBuilder.add("productId", productDtoYousif.getId())
                 .add("productName", productDtoYousif.getProductName())
                 .add("productDescription", productDtoYousif.getProductDescription())
                 // Assuming productImage is converted to Base64 for JSON
                 .add("productImage", Base64.getEncoder().encodeToString(productDtoYousif.getProductImage()))
                 .add("price", productDtoYousif.getPrice())
                 .add("stockCount", productDtoYousif.getStockCount())
-                .add("category", productDtoYousif.getCategory().getCategoryName());
+                .add("category", productDtoYousif.getCategory().getCategoryName())
+                .add("totalPagesForFilteredProducts", totalPagesForFilteredProducts);
+
         return jsonObjectBuilder.build().toString();
     }
+
 
 }

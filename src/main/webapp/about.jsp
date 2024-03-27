@@ -143,49 +143,50 @@
 						<h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
 						<div class="row">
 							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-shipping-fast"></i>
-									</div>
-									<div class="content">
-										<h3>Home Delivery</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-money-bill-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Best Price</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-briefcase"></i>
-									</div>
-									<div class="content">
-										<h3>Custom Box</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-sync-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Quick Refund</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
+                                <div class="list-box d-flex">
+                                    <div class="list-icon">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Home Delivery</h3>
+                                        <p>Enjoy the convenience of home delivery for your orders. We ensure prompt and reliable delivery services to your doorstep.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+                                <div class="list-box d-flex">
+                                    <div class="list-icon">
+                                        <i class="fas fa-money-bill-alt"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Best Price</h3>
+                                        <p>Get the best value for your money with our competitive pricing. We strive to offer quality products at affordable prices.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+                                <div class="list-box d-flex">
+                                    <div class="list-icon">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Custom Box</h3>
+                                        <p>Personalize your orders with our custom box options. Tailor your purchases according to your preferences and requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="list-box d-flex">
+                                    <div class="list-icon">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Quick Refund</h3>
+                                        <p>Experience hassle-free returns and refunds with our quick refund policy. Your satisfaction is our priority, and we ensure prompt resolution for any issues.</p>
+                                    </div>
+                                </div>
+                            </div>
+
 						</div>
 					</div>
 				</div>
